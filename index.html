@@ -51,7 +51,7 @@
     .hero { padding: 100px 0 60px; text-align: center; }
     
     /* Logo da Prime Vision customizada */
-    .logo { font-size: clamp(42px, 8vw, 68px); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 20px; }
+    .logo { font-size: clamp(32px, 6vw, 54px); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 15px; }
     .logo .prime { color: #ffffff; }
     .logo .vision { color: var(--blue); }
     .logo .play { color: var(--muted); font-weight: 300; font-size: 0.8em; }
@@ -107,7 +107,7 @@
 
     .faq-grid { display: grid; gap: 15px; max-width: 800px; margin: 40px auto 0; }
     .faq { padding: 24px; background: var(--card); border-radius: 18px; border: 1px solid var(--stroke); }
-    .faq strong { color: var(--blue); display: block; margin-bottom: 8px; }
+    .faq stroke { color: var(--blue); display: block; margin-bottom: 8px; }
 
     footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--stroke); color: var(--muted); font-size: 14px; }
 
@@ -119,6 +119,25 @@
     }
     @media (max-width: 480px) {
       .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ESTILO EXCLUSIVO DO NOVO BANNER PRINCIPAL */
+    .banner-section {
+      padding: 20px 0 40px;
+      text-align: center;
+    }
+    .banner-principal {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: block;
+    }
+    .banner-principal:hover {
+      transform: scale(1.01);
+      border-color: var(--blue);
     }
   </style>
 </head>
@@ -140,6 +159,14 @@
       </div>
     </div>
   </header>
+
+  <section class="banner-section">
+    <div class="container">
+      <a href="https://wa.me/5535984678333?text=Vim+pelo+site+e+quero+um+teste+grátis">
+        <img src="banner-prime-vision.jpg" alt="Prime Vision Play 8K" class="banner-principal">
+      </a>
+    </div>
+  </section>
 
   <section class="section">
     <div class="container">
