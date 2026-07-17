@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista VIP - Adeus CLT (Método Cinema Lucrativo)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CONFIGURAÇÕES GERAIS E PALETA DE LUXO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #060913;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .highlight {
+            color: #f59e0b;
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+        }
+
+        /* ANIMAÇÃO DOS BOTÕES PULSANTES E BRILHANTES */
+        @keyframes glowing-pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(245, 158, 11, 0.5), 0 0 30px rgba(245, 158, 11, 0.3);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 0 25px rgba(245, 158, 11, 0.8), 0 0 50px rgba(245, 158, 11, 0.5);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(245, 158, 11, 0.5), 0 0 30px rgba(245, 158, 11, 0.3);
+            }
+        }
+
+        /* BARRA DE ESCASSEZ COM CRONÔMETRO */
+        .scarcity-bar {
+            background: linear-gradient(90deg, #b45309 0%, #f59e0b 50%, #b45309 100%);
+            color: #000000;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timer-box {
+            background-color: #000000;
+            color: #f59e0b;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 16px;
+        }
+
+        /* SESSÃO HEADER */
+        .header-section {
+            background: radial-gradient(circle at top, rgba(245, 158, 11, 0.12) 0%, rgba(6, 9, 13, 0) 70%);
+            padding: 60px 0 30px 0;
+            text-align: center;
+        }
+
+        .badge-premium {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: #f59e0b;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.2;
+            max-width: 950px;
+            margin: 0 auto 20px auto;
+            letter-spacing: -1px;
+        }
+
+        .subheadline {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ESTRUTURA DO FORMULÁRIO DE CAPTURA DE ELITE */
+        .capture-container {
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .form-box {
+            background-color: #0f1322;
+            border: 2px solid #f59e0b;
+            border-radius: 24px;
+            max-width: 550px;
+            margin: 30px auto 0 auto;
+            padding: 45px 35px;
+            box-shadow: 0 30px 70px rgba(245, 158, 11, 0.1);
+            text-align: left;
+        }
+
+        .form-box h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .form-box p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 24px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .trust-elements {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        /* ========================================================= */
+        /* SOBREPOSIÇÃO DE ESTILOS PARA O ACTIVECAMPAIGN NÃO QUEBRAR O LAYOUT */
+        /* ========================================================= */
+        ._form_3, ._form {
+            background: transparent !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            color: #ffffff !important;
+        }
+        ._form-content {
+            padding: 0 !important;
+        }
+        ._form-label {
+            display: block !important;
+            font-size: 13px !important;
+            color: #cbd5e1 !important;
+            font-weight: 600 !important;
+            margin-bottom: 6px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+        }
+        ._form-content input[type="text"],
+        ._form-content input[type="email"] {
+            width: 100% !important;
+            padding: 16px !important;
+            background-color: #060913 !important;
+            border: 1px solid #1e293b !important;
+            border-radius: 8px !important;
+            color: #ffffff !important;
+            font-size: 15px !important;
+            outline: none !important;
+            transition: all 0.2s ease !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            margin-bottom: 16px !important;
+        }
+        ._form-content input[type="text"]:focus,
+        ._form-content input[type="email"]:focus {
+            border-color: #f59e0b !important;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.2) !important;
+        }
+        ._submit {
+            display: block !important;
+            width: 100% !important;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+            color: #000000 !important;
+            padding: 20px !important;
+            border-radius: 8px !important;
+            font-size: 18px !important;
+            font-weight: 800 !important;
+            text-decoration: none !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            animation: glowing-pulse 2s infinite ease-in-out !important;
+            border: none !important;
+            cursor: pointer !important;
+            text-align: center !important;
+            margin-top: 10px !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+        /* Oculta marca do ActiveCampaign se aparecer */
+        ._form-branding {
+            display: none !important;
+        }
+        /* Ajuste do texto de sucesso */
+        ._form-thank-you {
+            font-size: 18px !important;
+            color: #f59e0b !important;
+            font-weight: bold !important;
+            text-align: center !important;
+        }
+
+        /* SESSÃO ENTREGÁVEIS */
+        .deliverables-section {
+            padding: 80px 0;
+            background-color: #0b0f19;
+            border-top: 1px solid #111827;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            letter-spacing: -0.5px;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .module-card {
+            background-color: #060913;
+            border-left: 4px solid #f59e0b;
+            padding: 24px;
+            border-radius: 0 12px 12px 0;
+            border-top: 1px solid #1e293b;
+            border-right: 1px solid #1e293b;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .module-number {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #f59e0b;
+            font-weight: 700;
+            margin-bottom: 4px;
+            display: block;
+            letter-spacing: 1px;
+        }
+
+        .module-card h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .module-card p {
+            font-size: 14px;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* SESSÃO FAQ */
+        .faq-section {
+            padding: 80px 0;
+            background-color: #060913;
+            border-top: 1px solid #1e293b;
+        }
+
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: #0f1322;
+            border: 1px solid #1e293b;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .faq-item h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #f8fafc;
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #03050a;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #334155;
+            border-top: 1px solid #0f1322;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            h1 { font-size: 28px; }
+            .subheadline { font-size: 15px; }
+            .modules-grid { grid-template-columns: 1fr; gap: 20px; }
+            .form-box { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA DE ESCASSEZ COM CONTAGEM REGRESSIVA ATIVA -->
+    <div class="scarcity-bar">
+        <span>🔥 VAGAS LIMITADAS PARA A LISTA DE ESPERA VIP. FECHAMENTO EM:</span>
+        <div class="timer-box" id="countdown-timer">15:00</div>
+    </div>
+
+    <!-- SESSÃO HEADER COM SUA PROMESSA ULTRA-VALIDADA -->
+    <section class="header-section">
+        <div class="container">
+            <span class="badge-premium">Método Orgânico e Sem Aparecer</span>
+            <h1>Entre na Lista VIP do Treinamento <span class="highlight">Adeus CLT</span></h1>
+            <p class="subheadline">Descubra a exata engenharia de edição técnica de elite que gerou mais de 35 Milhões de Views em 2 meses e prepare-se para dominar o algoritmo de monetização antes de todo mundo.</p>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CAPTURA COM O SCRIPT DO ACTIVECAMPAIGN INJETADO -->
+    <section class="capture-container">
+        <div class="container">
+            
+            <div class="form-box">
+                <h3>Garantir Meu Acesso Antecipado</h3>
+                <p>Cadastre-se abaixo para garantir sua vaga na lista de espera exclusiva, receber atualizações em primeira mão e ter acesso ao menor valor de lançamento histórico (apenas R$ 47).</p>
+                
+                <!-- SCRIPT DO ACTIVECAMPAIGN (ID 3) INSERIDO AQUI -->
+                <script src="https://danielalexandre79.activehosted.com/f/embed.php?id=3" charset="utf-8"></script>
+
+                <div class="trust-elements">
+                    <span>🔒 Seus dados estão 100% seguros</span> • <span>🚫 Zero Spam</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO DOS ENTREGÁVEIS PARA GERAR COBIÇA NO LEAD -->
+    <section class="deliverables-section">
+        <div class="container">
+            <h2 class="section-title">O Que Você Vai Dominar por Dentro do Treinamento:</h2>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <span class="module-number">Módulo 4</span>
+                    <h3>A Garimpagem de Ouro</h3>
+                    <p>O método exclusivo para selecionar e baixar cenas brutas de altíssima retenção nas redes sociais, totalmente limpas e prontas para explodir em engajamento.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-number">Módulo 5</span>
+                    <h3>A Engenharia da Edição Anti-Copyright</h3>
+                    <p>O segredo técnico do jogo. O passo a passo prático de modificação visual e de áudio para blindar seus vídeos contra bloqueios de direitos autorais e conteúdo reutilizado.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-number">Módulo 6</span>
+                    <h3>Coprodução com Inteligência Artificial</h3>
+                    <p>Como usar comandos e prompts padronizados no ChatGPT para gerar descrições magnéticas, roteiros e hashtags estratégicas em segundos.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-number">Módulo 9</span>
+                    <h3>A Armadura Contra Penalidades</h3>
+                    <p>Aprenda a proteger a saúde técnica do seu perfil, evitando shadowbans e aplicando protocolos de limpeza imediatos caso sua página sofra restrições.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ AJUSTADO PARA LISTA DE ESPERA -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h4>Por que devo entrar na Lista VIP agora?</h4>
+                    <p>As vagas para o primeiro lote promocional do Adeus CLT serão extremamente limitadas. Quem estiver cadastrado na Lista VIP receberá o link de compra com desconto exclusivo 1 hora antes de todo mundo.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>O cadastro na lista é gratuito?</h4>
+                    <p>Sim, o cadastro nesta página é 100% gratuito. Você só está sinalizando ao sistema que tem interesse em mudar de vida e sair da CLT usando o nosso método de Cinema Lucrativo.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Eu realmente não preciso aparecer nos vídeos?</h4>
+                    <p>Exatamente. O treinamento ensina o modelo de canais de bastidores (canais dark). Você criará um império de views sem precisar expor seu rosto ou sua privacidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Adeus CLT - Método Cinema Lucrativo. Todos os direitos reservados.</p>
+            <p style="margin-top: 12px; font-size: 11px; color: #1e293b; max-width: 800px; margin-left: auto; margin-right: auto;">Este site não possui nenhum tipo de vínculo, afiliação ou recomendação oficial com as plataformas Facebook, Instagram ou suas controladoras.</p>
+        </div>
+    </footer>
+
+    <script>
+        // SCRIPT DO CRONÔMETRO DE ESCASSEZ
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var fifteenMinutes = 60 * 15,
+                display = document.querySelector('#countdown-timer');
+            startTimer(fifteenMinutes, display);
+        };
+    </script>
+</body>
+</html>
