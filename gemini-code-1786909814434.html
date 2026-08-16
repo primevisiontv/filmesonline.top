@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Material de Apoio: Criação de Nome e Logo com IA | Adeus CLT</title>
+  <style>
+    :root {
+      --bg-main: #0d1117;
+      --bg-card: #161b22;
+      --bg-card-secondary: #21262d;
+      --border-color: #30363d;
+      --gold-primary: #f59e0b;
+      --gold-hover: #d97706;
+      --text-main: #f0f6fc;
+      --text-muted: #8b949e;
+      --accent-blue: #58a6ff;
+      --accent-green: #3fb950;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 30px 15px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 35px;
+    }
+
+    .badge-training {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--gold-primary);
+      border: 1px solid var(--gold-primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Cards */
+    .step-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .step-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .step-number {
+      background: var(--gold-primary);
+      color: #000000;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .tool-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--bg-card-secondary);
+      color: var(--accent-blue);
+      border: 1px solid var(--border-color);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .tool-link-btn:hover {
+      background-color: var(--border-color);
+      color: #ffffff;
+    }
+
+    .instructions-list {
+      background-color: var(--bg-card-secondary);
+      border-left: 4px solid var(--gold-primary);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .instructions-list strong {
+      color: var(--text-main);
+    }
+
+    .instructions-list ol {
+      margin-left: 20px;
+      margin-top: 6px;
+    }
+
+    .instructions-list li {
+      margin-bottom: 4px;
+    }
+
+    /* Prompt Box */
+    .prompt-wrapper {
+      position: relative;
+      background-color: #0d1117;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .prompt-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--bg-card-secondary);
+      padding: 8px 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .prompt-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-copy {
+      background-color: var(--gold-primary);
+      color: #000000;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s ease;
+    }
+
+    .btn-copy:hover {
+      background-color: var(--gold-hover);
+    }
+
+    .btn-copy.copied {
+      background-color: var(--accent-green);
+      color: #ffffff;
+    }
+
+    pre {
+      padding: 18px;
+      font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #c9d1d9;
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 380px;
+      overflow-y: auto;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 22px; }
+      .step-title { font-size: 17px; }
+      .step-card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="badge-training">Treinamento Adeus CLT • Método Cinema Lucrativo</div>
+      <h1>🎬 Material de Apoio: Nome & Identidade Visual</h1>
+      <p class="subtitle">Utilize os prompts otimizados abaixo para criar um nome memorável no ChatGPT e um logotipo profissional no Gemini em poucos minutos.</p>
+    </div>
+
+    <!-- Passo 1: Nome (ChatGPT) -->
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-title">
+          <div class="step-number">1</div>
+          <span>Gerar Nome Magnético da Marca</span>
+        </div>
+        <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="tool-link-btn">
+          <span>Abrir ChatGPT</span> ↗
+        </a>
+      </div>
+
+      <div class="instructions-list">
+        <strong>Como executar esta etapa:</strong>
+        <ol>
+          <li>Clique no botão <strong>"Abrir ChatGPT"</strong> acima.</li>
+          <li>Copie o prompt abaixo clicando em <strong>"Copiar Prompt"</strong>.</li>
+          <li>Cole no ChatGPT e aguarde as 50 opções estruturadas.</li>
+          <li>Escolha o nome ideal entre os recomendados na lista final do TOP 10.</li>
+        </ol>
+      </div>
+
+      <div class="prompt-wrapper">
+        <div class="prompt-top-bar">
+          <span class="prompt-label">Prompt Master de Naming</span>
+          <button class="btn-copy" onclick="copyPrompt('prompt-nome', this)">
+            📋 Copiar Prompt
+          </button>
+        </div>
+        <pre id="prompt-nome">🎬 PROMPT MASTER — GERADOR DE NOMES PARA PÁGINA DE FILMES E SÉRIES
+Quero que você atue como um especialista em naming, branding, marketing digital e posicionamento de marcas no Instagram, especializado em páginas de entretenimento, cinema, filmes e séries.
+Minha missão é criar uma página de Instagram focada em filmes e séries, principalmente cortes de cenas marcantes, momentos inesquecíveis, cenas emocionantes, engraçadas, assustadoras, épicas e conteúdos relacionados ao universo do cinema.
+Quero encontrar um nome que tenha potencial para se transformar em uma marca forte, memorável e reconhecível.
+Não quero nomes genéricos ou óbvios.
+Quero nomes com personalidade, criatividade e potencial de crescimento.
+
+🎬 CONTEXTO DA PÁGINA
+O perfil será voltado para:
+🎥 Filmes
+📺 Séries
+🍿 Cinema
+🔥 Cenas marcantes
+🎭 Personagens inesquecíveis
+⭐ Momentos épicos
+😂 Cenas engraçadas
+😱 Cenas de terror e suspense
+❤️ Cenas emocionantes
+🚀 Ficção científica e fantasia
+🎬 Clássicos e lançamentos
+
+O conteúdo será publicado principalmente em formato de:
+- Reels;
+- Cortes de filmes;
+- Cortes de séries;
+- Cenas marcantes;
+- Momentos virais;
+- Curiosidades;
+- Conteúdo de entretenimento.
+O público será formado principalmente por pessoas que gostam de filmes, séries, cinema e cultura pop.
+
+🎯 OBJETIVO DO NOME
+Quero um nome que:
+✅ Seja fácil de lembrar;
+✅ Seja fácil de pronunciar;
+✅ Seja fácil de escrever;
+✅ Tenha personalidade;
+✅ Tenha aparência profissional;
+✅ Funcione bem no Instagram;
+✅ Tenha potencial para virar uma marca;
+✅ Combine com uma página de filmes e séries;
+✅ Seja interessante mesmo para quem ainda não conhece a página;
+✅ Permita que a página cresça para outras redes sociais no futuro;
+✅ Não limite a página a apenas um gênero de filme;
+✅ Não pareça nome de perfil amador;
+✅ Não pareça nome de página genérica de memes;
+✅ Tenha potencial para ser utilizado em logo, identidade visual e outros materiais.
+
+🚫 EVITE
+Não quero nomes como:
+❌ “Filmes Online”
+❌ “Filmes e Séries”
+❌ “Melhores Filmes”
+❌ “Filmes Grátis”
+❌ “Filmes Top”
+❌ “Cenas de Filmes”
+❌ “Filmes HD”
+❌ “Cinema Online”
+❌ Nomes excessivamente longos;
+❌ Nomes difíceis de pronunciar;
+❌ Nomes com muitos números;
+❌ Nomes com excesso de símbolos;
+❌ Nomes que pareçam cópia de páginas existentes;
+❌ Nomes que dependam de uma tendência passageira;
+❌ Nomes que limitem a página a um único filme, personagem ou franquia.
+Quero autenticidade.
+
+💡 ESTILO DOS NOMES
+Os nomes podem ser:
+- Em português;
+- Em inglês;
+- Mistura inteligente de português e inglês;
+- Palavras inventadas;
+- Combinações de palavras;
+- Nomes abstratos;
+- Nomes relacionados ao universo cinematográfico.
+
+Não fique preso a palavras como “filme”, “cinema” ou “série”.
+Um nome forte pode transmitir o universo da marca sem explicar literalmente o que ela faz.
+Por exemplo, CinePrime é apenas uma referência de estilo e posicionamento.
+NÃO copie esse nome e NÃO crie apenas variações como: CineMax, CinePlus, CineTop, CinePlay, CinePrimeTV.
+Quero ideias realmente diferentes.
+
+🔥 GERE 50 NOMES
+Crie 50 sugestões de nomes, divididas em categorias:
+🎬 1. PREMIUM / SOFISTICADOS (10 nomes elegantes e profissionais)
+🔥 2. VIRAIS / MEMORÁVEIS (10 nomes curtos e chamativos)
+🍿 3. CINEMATOGRÁFICOS (10 nomes inspirados no universo do cinema)
+⚡ 4. MODERNOS / DIGITAIS (10 nomes modernos para redes sociais)
+🧠 5. CRIATIVOS / AUTÊNTICOS (10 nomes originais ou inventados)
+
+📊 FORMATO DA RESPOSTA
+Apresente os nomes em cada uma das 5 categorias com:
+- Nome
+- Ideia/posicionamento: breve explicação
+
+🏆 DEPOIS DOS 50 NOMES
+Faça uma seleção especial:
+🏆 TOP 10 — MAIOR POTENCIAL DE MARCA (com Nome, Por que funciona, Sensação que transmite e Nota de potencial ⭐⭐⭐⭐⭐)
+💎 TOP 5 — OS MAIS FORTES (analisando memorabilidade, pronúncia, escrita, branding e crescimento)
+🥇 ESCOLHA O VENCEDOR (indique UM único nome vencedor e explique em até 3 frases o porquê da escolha)
+
+⚠️ REGRA DE AUTENTICIDADE & 🔎 VERIFICAÇÃO FINAL
+Elimine nomes genéricos, cópias e difíceis de pronunciar antes de responder.
+Agora gere as 50 melhores ideias de nomes possíveis seguindo todas as instruções.</pre>
+      </div>
+    </div>
+
+    <!-- Passo 2: Logo (Gemini) -->
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-title">
+          <div class="step-number">2</div>
+          <span>Gerar Logotipo Profissional</span>
+        </div>
+        <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="tool-link-btn">
+          <span>Abrir Google Gemini</span> ↗
+        </a>
+      </div>
+
+      <div class="instructions-list">
+        <strong>Como executar esta etapa:</strong>
+        <ol>
+          <li>Clique no botão <strong>"Abrir Google Gemini"</strong> acima.</li>
+          <li>Copie o prompt de logo abaixo.</li>
+          <li>No texto do prompt, troque <strong>"CinePrime"</strong> pelo nome escolhido no Passo 1.</li>
+          <li>Cole no Gemini e baixe a imagem gerada em alta resolução para usar como foto de perfil.</li>
+        </ol>
+      </div>
+
+      <div class="prompt-wrapper">
+        <div class="prompt-top-bar">
+          <span class="prompt-label">Prompt Oficial de Logotipo</span>
+          <button class="btn-copy" onclick="copyPrompt('prompt-logo', this)">
+            📋 Copiar Prompt
+          </button>
+        </div>
+        <pre id="prompt-logo">Crie um logotipo vetorizado e minimalista para uma página de cinema chamada "CinePrime". O design deve conter um ícone moderno de claquete de cinema ou rolo de filme, com detalhes em dourado metálico, estilo 3D, sobre um fundo escuro limpo. Formato quadrado, alta resolução, estilo marca de luxo.</pre>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      Treinamento Adeus CLT • Método Cinema Lucrativo • Todos os direitos reservados.
+    </div>
+
+  </div>
+
+  <script>
+    function copyPrompt(elementId, btn) {
+      const textToCopy = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = btn.innerHTML;
+        btn.classList.add('copied');
+        btn.innerHTML = '✅ Copiado!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error('Erro ao copiar:', err);
+      });
+    }
+  </script>
+
+</body>
+</html>
