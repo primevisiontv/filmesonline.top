@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Material de Apoio: Foto de Capa do Facebook com IA | Adeus CLT</title>
+  <style>
+    :root {
+      --bg-main: #0d1117;
+      --bg-card: #161b22;
+      --bg-card-secondary: #21262d;
+      --border-color: #30363d;
+      --gold-primary: #f59e0b;
+      --gold-hover: #d97706;
+      --text-main: #f0f6fc;
+      --text-muted: #8b949e;
+      --accent-blue: #58a6ff;
+      --accent-green: #3fb950;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 30px 15px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 35px;
+    }
+
+    .badge-training {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--gold-primary);
+      border: 1px solid var(--gold-primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Card */
+    .step-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .step-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .step-number {
+      background: var(--gold-primary);
+      color: #000000;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .tool-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--bg-card-secondary);
+      color: var(--accent-blue);
+      border: 1px solid var(--border-color);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .tool-link-btn:hover {
+      background-color: var(--border-color);
+      color: #ffffff;
+    }
+
+    .instructions-list {
+      background-color: var(--bg-card-secondary);
+      border-left: 4px solid var(--gold-primary);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .instructions-list strong {
+      color: var(--text-main);
+    }
+
+    .instructions-list ol {
+      margin-left: 20px;
+      margin-top: 6px;
+    }
+
+    .instructions-list li {
+      margin-bottom: 4px;
+    }
+
+    /* Prompt Box */
+    .prompt-wrapper {
+      position: relative;
+      background-color: #0d1117;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .prompt-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--bg-card-secondary);
+      padding: 8px 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .prompt-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-copy {
+      background-color: var(--gold-primary);
+      color: #000000;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s ease;
+    }
+
+    .btn-copy:hover {
+      background-color: var(--gold-hover);
+    }
+
+    .btn-copy.copied {
+      background-color: var(--accent-green);
+      color: #ffffff;
+    }
+
+    pre {
+      padding: 18px;
+      font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #c9d1d9;
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 380px;
+      overflow-y: auto;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 22px; }
+      .step-title { font-size: 17px; }
+      .step-card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="badge-training">Treinamento Adeus CLT • Método Cinema Lucrativo</div>
+      <h1>🎬 Material de Apoio: Foto de Capa Profissional</h1>
+      <p class="subtitle">Utilize o prompt otimizado abaixo no Google Gemini para gerar uma imagem de capa panorâmica de cinema com área de segurança perfeitamente alinhada para celular e computador.</p>
+    </div>
+
+    <!-- Passo Único: Capa (Gemini) -->
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-title">
+          <div class="step-number">★</div>
+          <span>Gerar Foto de Capa com IA</span>
+        </div>
+        <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="tool-link-btn">
+          <span>Abrir Google Gemini</span> ↗
+        </a>
+      </div>
+
+      <div class="instructions-list">
+        <strong>Como executar esta etapa:</strong>
+        <ol>
+          <li>Clique no botão <strong>"Abrir Google Gemini"</strong> acima.</li>
+          <li>Copie o prompt abaixo clicando em <strong>"Copiar Prompt"</strong>.</li>
+          <li>Cole no Gemini e envie a mensagem para gerar a imagem panorâmica (16:9).</li>
+          <li>Baixe a imagem em alta resolução e faça o upload na sua Página do Facebook.</li>
+        </ol>
+      </div>
+
+      <div class="prompt-wrapper">
+        <div class="prompt-top-bar">
+          <span class="prompt-label">Prompt Oficial de Capa do Facebook</span>
+          <button class="btn-copy" onclick="copyPrompt('prompt-capa', this)">
+            📋 Copiar Prompt
+          </button>
+        </div>
+        <pre id="prompt-capa">Gere uma imagem de capa panorâmica em alta resolução (proporção 16:9 horizontal) com temática de cinema e produção de filmes. 
+
+Composição e Enquadramento:
+- Mantenha os elementos visuais principais centralizados (área de segurança para dispositivos móveis), deixando as bordas laterais e a parte inferior com iluminação suave e espaço negativo para não colidir com a foto de perfil.
+- Ambiente cinematográfico escuro e elegante, com iluminação volumétrica e feixes de luz de projetor atravessando uma névoa sutil.
+- Detalhes visuais sutis: reflexos de lente anamórfica (bokeh), cadeira de diretor, lente de câmera de cinema profissional e rolos de película ao fundo com desfoque de profundidade de campo (depth of field).
+- Paleta de cores: tons de azul meia-noite (navy), cinza chumbo e toques de luz dourada/âmbar (estilo iluminação dramática de Hollywood).
+- Regra estrita: NÃO inclua nenhum texto, palavras, títulos, letras, números, símbolos ou marcas d'água na imagem.</pre>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      Treinamento Adeus CLT • Método Cinema Lucrativo • Todos os direitos reservados.
+    </div>
+
+  </div>
+
+  <script>
+    function copyPrompt(elementId, btn) {
+      const textToCopy = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = btn.innerHTML;
+        btn.classList.add('copied');
+        btn.innerHTML = '✅ Copiado!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error('Erro ao copiar:', err);
+      });
+    }
+  </script>
+
+</body>
+</html>
