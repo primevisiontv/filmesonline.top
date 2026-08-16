@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Material de Apoio: Biografia Viral | Adeus CLT</title>
+  <style>
+    :root {
+      --bg-main: #0d1117;
+      --bg-card: #161b22;
+      --bg-card-secondary: #21262d;
+      --border-color: #30363d;
+      --gold-primary: #f59e0b;
+      --gold-hover: #d97706;
+      --text-main: #f0f6fc;
+      --text-muted: #8b949e;
+      --accent-blue: #58a6ff;
+      --accent-green: #3fb950;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 30px 15px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 35px;
+    }
+
+    .badge-training {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--gold-primary);
+      border: 1px solid var(--gold-primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Card */
+    .step-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .step-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .step-number {
+      background: var(--gold-primary);
+      color: #000000;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .tool-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--bg-card-secondary);
+      color: var(--accent-blue);
+      border: 1px solid var(--border-color);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .tool-link-btn:hover {
+      background-color: var(--border-color);
+      color: #ffffff;
+    }
+
+    .instructions-list {
+      background-color: var(--bg-card-secondary);
+      border-left: 4px solid var(--gold-primary);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .instructions-list strong {
+      color: var(--text-main);
+    }
+
+    .instructions-list ol {
+      margin-left: 20px;
+      margin-top: 6px;
+    }
+
+    .instructions-list li {
+      margin-bottom: 4px;
+    }
+
+    /* Prompt Box */
+    .prompt-wrapper {
+      position: relative;
+      background-color: #0d1117;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .prompt-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--bg-card-secondary);
+      padding: 8px 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .prompt-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-copy {
+      background-color: var(--gold-primary);
+      color: #000000;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s ease;
+    }
+
+    .btn-copy:hover {
+      background-color: var(--gold-hover);
+    }
+
+    .btn-copy.copied {
+      background-color: var(--accent-green);
+      color: #ffffff;
+    }
+
+    pre {
+      padding: 18px;
+      font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #c9d1d9;
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 380px;
+      overflow-y: auto;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 22px; }
+      .step-title { font-size: 17px; }
+      .step-card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="badge-training">Treinamento Adeus CLT • Método Cinema Lucrativo</div>
+      <h1>🎬 Material de Apoio: Biografia Viral</h1>
+      <p class="subtitle">Utilize o Prompt Master abaixo no ChatGPT para gerar 5 variações estratégicas de biografia (dentro do limite oficial de 150 caracteres) e transformar visitantes em seguidores fiéis.</p>
+    </div>
+
+    <!-- Passo Único: Bio (ChatGPT) -->
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-title">
+          <div class="step-number">★</div>
+          <span>Gerar Bio de Alta Conversão</span>
+        </div>
+        <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="tool-link-btn">
+          <span>Abrir ChatGPT</span> ↗
+        </a>
+      </div>
+
+      <div class="instructions-list">
+        <strong>Como executar esta etapa:</strong>
+        <ol>
+          <li>Clique no botão <strong>"Abrir ChatGPT"</strong> acima.</li>
+          <li>Copie o prompt abaixo clicando em <strong>"Copiar Prompt"</strong>.</li>
+          <li>No início do prompt, lembre-se de trocar <strong>@CinePrime</strong> pelo seu @ oficial.</li>
+          <li>Cole no ChatGPT e escolha a melhor das 5 opções geradas para colar no Instagram e Facebook.</li>
+        </ol>
+      </div>
+
+      <div class="prompt-wrapper">
+        <div class="prompt-top-bar">
+          <span class="prompt-label">Prompt Master de Biografia</span>
+          <button class="btn-copy" onclick="copyPrompt('prompt-bio', this)">
+            📋 Copiar Prompt
+          </button>
+        </div>
+        <pre id="prompt-bio">🎬 PROMPT — BIO PREMIUM PARA PÁGINA DE FILMES E SÉRIES
+Quero que você atue como um especialista em Instagram, branding, copywriting e crescimento orgânico, com experiência na criação de páginas de entretenimento e conteúdo viral.
+Sua missão é criar uma BIO PREMIUM, PROFISSIONAL, ATRAENTE E MEMORÁVEL para o seguinte perfil:
+📌 @CinePrime
+⚠️ IMPORTANTE:
+Antes de usar este prompt, substitua @CinePrime pelo @ do seu próprio perfil.
+👉 Exemplo:
+@CinePrime → @SeuPerfil
+Essa é a ÚNICA informação que deve ser alterada neste prompt.
+
+🎬 SOBRE O PERFIL
+O perfil é uma página de entretenimento focada em:
+🎥 Filmes e séries
+🍿 Cortes de filmes e séries
+🔥 Cenas marcantes e inesquecíveis
+🎭 Momentos emocionantes, engraçados, assustadores ou surpreendentes
+⭐ Clássicos e lançamentos do cinema e das séries
+🎬 Curiosidades e conteúdos relacionados ao universo audiovisual
+O principal objetivo da página é entreter, despertar curiosidade e fazer as pessoas descobrirem filmes e séries através de cenas marcantes.
+O conteúdo será publicado principalmente em formato de:
+- Reels;
+- Vídeos curtos;
+- Cortes de filmes;
+- Cenas de séries;
+- Momentos virais;
+- Conteúdos relacionados a cinema e entretenimento.
+O público-alvo são pessoas que amam filmes, séries, cinema, personagens marcantes, cenas emocionantes, ação, comédia, terror, fantasia, ficção científica, romance e entretenimento em geral.
+A bio precisa transmitir a sensação de que o perfil é um lugar para quem realmente ama filmes e séries.
+
+🎯 OBJETIVO DA BIO
+A bio precisa fazer uma pessoa que acabou de entrar no perfil entender rapidamente:
+- O que ela encontrará aqui;
+- Qual é o nicho da página;
+- Por que deveria seguir;
+- Qual é a personalidade do perfil.
+A bio deve gerar curiosidade e desejo de seguir o perfil.
+Não quero uma bio genérica como:
+❌ “Os melhores filmes e séries 🎬”
+❌ “Conteúdo sobre filmes e séries 🍿”
+❌ “Tudo sobre cinema 🎥”
+Crie algo mais criativo, memorável e estratégico.
+
+✍️ REGRAS OBRIGATÓRIAS
+Crie 5 opções diferentes de bio.
+Cada bio deve ter NO MÁXIMO 150 CARACTERES, contando espaços, emojis e pontuação.
+⚠️ NÃO ultrapasse 150 caracteres em nenhuma hipótese.
+As bios devem ser:
+✅ Premium
+✅ Modernas
+✅ Profissionais
+✅ Fáceis de memorizar
+✅ Naturais em português brasileiro
+✅ Visualmente bonitas
+✅ Adequadas para Instagram
+✅ Voltadas para crescimento orgânico
+✅ Criativas
+✅ Com forte identidade de entretenimento
+Use emojis estrategicamente, mas sem exagerar.
+Não utilize hashtags.
+Não utilize excesso de símbolos.
+Não faça promessas exageradas.
+Não deixe a bio com aparência de texto escrito por inteligência artificial.
+
+🔥 CRIE 5 ESTILOS
+🥇 OPÇÃO 1 — PREMIUM (Uma bio sofisticada, elegante e com forte identidade de marca)
+🔥 OPÇÃO 2 — VIRAL (Uma bio chamativa, memorável e que desperte curiosidade imediatamente)
+🎬 OPÇÃO 3 — CINEMATOGRÁFICA (Uma bio com linguagem relacionada ao universo do cinema)
+⚡ OPÇÃO 4 — CURTA E IMPACTANTE (Poucas palavras, máxima clareza e impacto visual)
+🚀 OPÇÃO 5 — CRESCIMENTO (Uma bio pensada para fazer o visitante entender rapidamente e seguir)
+
+📊 FORMATO DA RESPOSTA
+Apresente exatamente desta forma:
+🥇 OPÇÃO 1 — PREMIUM
+[BIO]
+📏 Caracteres: [número]
+🔥 OPÇÃO 2 — VIRAL
+[BIO]
+📏 Caracteres: [número]
+🎬 OPÇÃO 3 — CINEMATOGRÁFICA
+[BIO]
+📏 Caracteres: [número]
+⚡ OPÇÃO 4 — CURTA E IMPACTANTE
+[BIO]
+📏 Caracteres: [número]
+🚀 OPÇÃO 5 — CRESCIMENTO
+[BIO]
+📏 Caracteres: [número]
+
+🏆 ESCOLHA A MELHOR
+Depois das 5 opções, escolha a melhor bio para esse tipo de página.
+Apresente:
+🏆 MINHA ESCOLHA
+Opção X
+Explique em no máximo 2 frases por que essa é a melhor opção para uma página de cortes de filmes e séries.
+
+⚠️ REVISÃO FINAL
+Antes de entregar o resultado, confira obrigatoriamente:
+✅ Todas as bios possuem no máximo 150 caracteres.
+✅ Todas estão relacionadas a filmes e séries.
+✅ Todas são diferentes entre si.
+✅ Todas possuem linguagem natural.
+✅ Nenhuma é genérica demais.
+✅ Nenhuma possui hashtags.
+✅ Nenhuma contém promessas exageradas.
+✅ Todas funcionariam visualmente em uma bio do Instagram.
+✅ A melhor opção realmente possui potencial para transformar visitantes em seguidores.
+Agora crie as 5 melhores bios possíveis para essa página de filmes e séries.</pre>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      Treinamento Adeus CLT • Método Cinema Lucrativo • Todos os direitos reservados.
+    </div>
+
+  </div>
+
+  <script>
+    function copyPrompt(elementId, btn) {
+      const textToCopy = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = btn.innerHTML;
+        btn.classList.add('copied');
+        btn.innerHTML = '✅ Copiado!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error('Erro ao copiar:', err);
+      });
+    }
+  </script>
+
+</body>
+</html>
