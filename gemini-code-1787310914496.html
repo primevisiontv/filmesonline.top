@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closet by Rany | Moda Feminina em Poços de Caldas - MG</title>
+    <meta name="description" content="A boutique de moda feminina mais amada de Poços de Caldas. Vestidos, conjuntos, tricôs, alfaiataria e looks exclusivos para você se sentir uma verdadeira Musa.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1A1A1A;
+            --accent-gold: #C5A880;
+            --accent-gold-hover: #b0936b;
+            --rose-nude: #E8D3C7;
+            --light-cream: #FAF7F2;
+            --card-bg: #FFFFFF;
+            --text-dark: #222222;
+            --text-muted: #666666;
+            --border-color: #EAE5DF;
+            --sale-red: #D9383A;
+            --whatsapp-green: #25D366;
+            --shadow-sm: 0 4px 12px rgba(0,0,0,0.04);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+            --shadow-lg: 0 16px 40px rgba(0,0,0,0.12);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--light-cream); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+        .font-cinzel { font-family: 'Cinzel', serif; letter-spacing: 2px; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        button { cursor: pointer; border: none; outline: none; font-family: inherit; transition: var(--transition); }
+        img { max-width: 100%; display: block; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+
+        /* TOP ANNOUNCEMENT */
+        .top-bar { background: #111; color: #FFF; font-size: 0.82rem; padding: 9px 0; text-align: center; font-weight: 500; }
+        .top-bar .cupom-badge { background: var(--accent-gold); color: #111; padding: 2px 8px; border-radius: 4px; font-weight: 700; margin: 0 4px; }
+        .top-bar .timer { font-weight: 700; color: #FFDFBA; }
+
+        /* HEADER */
+        header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 99; border-bottom: 1px solid var(--border-color); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+        .logo-area { display: flex; flex-direction: column; align-items: flex-start; }
+        .logo-title { font-size: 1.85rem; font-weight: 700; letter-spacing: 3px; color: var(--primary); text-transform: uppercase; }
+        .logo-sub { font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; margin-top: -3px; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dark); position: relative; padding: 6px 0; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--accent-gold); transition: var(--transition); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a.sale-link { color: var(--sale-red); font-weight: 700; }
+        .header-actions { display: flex; align-items: center; gap: 18px; }
+        .header-btn { background: none; font-size: 1.15rem; color: var(--primary); position: relative; padding: 6px; }
+        .cart-count-badge { position: absolute; top: -2px; right: -4px; background: var(--sale-red); color: #fff; font-size: 0.68rem; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .btn-vip-header { background: var(--primary); color: #fff; padding: 8px 16px; font-size: 0.82rem; font-weight: 600; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 8px; }
+        .btn-vip-header:hover { background: var(--accent-gold); color: #111; }
+        .mobile-menu-btn { display: none; font-size: 1.4rem; background: none; color: var(--primary); }
+
+        /* HERO SECTION */
+        .hero-section { position: relative; background: linear-gradient(135deg, #1C1917 0%, #292524 100%); color: #FFFFFF; padding: 80px 0 100px; overflow: hidden; }
+        .hero-section::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: radial-gradient(circle at 80% 30%, rgba(197, 168, 128, 0.25) 0%, transparent 60%); pointer-events: none; }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; position: relative; z-index: 2; }
+        .hero-content .tag-musa { display: inline-flex; align-items: center; gap: 8px; background: rgba(197, 168, 128, 0.2); border: 1px solid var(--accent-gold); color: #F5EBE6; padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 20px; text-transform: uppercase; }
+        .hero-content h1 { font-size: 3.4rem; line-height: 1.15; margin-bottom: 20px; color: #FFFFFF; }
+        .hero-content h1 span { color: var(--accent-gold); font-style: italic; display: block; }
+        .hero-content p { font-size: 1.15rem; color: #D6D3D1; margin-bottom: 35px; max-width: 520px; font-weight: 300; }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn-primary { background: var(--accent-gold); color: #111; padding: 16px 36px; font-size: 0.95rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: var(--radius-sm); box-shadow: 0 8px 25px rgba(197, 168, 128, 0.35); display: inline-flex; align-items: center; gap: 10px; }
+        .btn-primary:hover { background: #d8bb93; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(197, 168, 128, 0.45); }
+        .btn-secondary { background: transparent; color: #FFF; border: 1.5px solid rgba(255,255,255,0.4); padding: 16px 30px; font-size: 0.95rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; border-radius: var(--radius-sm); display: inline-flex; align-items: center; gap: 10px; }
+        .btn-secondary:hover { border-color: #FFF; background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+        .hero-visual { position: relative; }
+        .hero-card-stack { position: relative; width: 100%; height: 480px; display: flex; justify-content: center; align-items: center; }
+        .hero-main-img-card { width: 320px; height: 440px; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg); position: relative; border: 3px solid rgba(197, 168, 128, 0.3); background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80') center/cover; }
+        .hero-float-badge { position: absolute; bottom: 25px; left: -20px; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(10px); color: var(--primary); padding: 14px 20px; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 12px; border-left: 4px solid var(--accent-gold); }
+        .hero-float-badge-right { position: absolute; top: 30px; right: -20px; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(10px); color: var(--primary); padding: 12px 18px; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; }
+
+        /* TRUST PILLARS */
+        .trust-section { background: #FFFFFF; border-bottom: 1px solid var(--border-color); padding: 30px 0; }
+        .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .trust-item { display: flex; align-items: center; gap
