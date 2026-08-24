@@ -1059,7 +1059,7 @@
     <div class="scarcity-bar">
         <span>🔥 LOTE DE LANÇAMENTO COM ACESSO VITALÍCIO LIBERADO:</span>
         <span>De <del>R$ 197</del> por apenas <strong>R$ 47</strong></span>
-        <div class="countdown-timer" id="timer">14:59</div>
+        <div class="countdown-timer" id="timer">01:25:00</div>
     </div>
 
     <!-- Hero Section -->
@@ -1623,28 +1623,33 @@
 
     <!-- Interactive Scripts -->
     <script>
-        // Countdown Timer Logic
-        function startTimer(duration, display) {
-            var timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
+        // Countdown Timer Logic (Cronômetro Global Sincronizado)
+        function updateGlobalTimer() {
+            // Ciclo de 1 hora e 25 minutos em milissegundos
+            const cycleDurationMs = 85 * 60 * 1000; 
+            const now = Date.now();
+            
+            // Calcula o tempo restante dentro do ciclo global
+            const timeElapsed = now % cycleDurationMs;
+            const timeRemaining = cycleDurationMs - timeElapsed;
 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+            // Converte para horas, minutos e segundos
+            let hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+            let minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
+            let seconds = Math.floor((timeRemaining / 1000) % 60);
 
-                display.textContent = minutes + ":" + seconds;
+            // Adiciona um zero à esquerda se for menor que 10
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
 
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);
+            // Atualiza o visor na página
+            document.getElementById('timer').textContent = hours + ":" + minutes + ":" + seconds;
         }
 
         window.onload = function () {
-            var fifteenMinutes = 60 * 14 + 59,
-                display = document.querySelector('#timer');
-            startTimer(fifteenMinutes, display);
+            updateGlobalTimer(); // Roda a primeira vez imediatamente
+            setInterval(updateGlobalTimer, 1000); // Atualiza a cada 1 segundo
         };
 
         // Accordion FAQ Toggle
