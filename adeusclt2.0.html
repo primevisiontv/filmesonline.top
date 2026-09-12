@@ -50,6 +50,8 @@
             --primary-gold-glow: rgba(255, 184, 0, 0.5);
             --accent-green: #00e676;
             --accent-green-glow: rgba(0, 230, 118, 0.4);
+            --accent-cyan: #06b6d4;
+            --accent-cyan-glow: rgba(6, 182, 212, 0.4);
             --accent-red: #ff334b;
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
@@ -154,7 +156,7 @@
         .comp-card.bad .comp-list li i { color: var(--accent-red); }
         .comp-card.good .comp-list li i { color: var(--accent-green); }
 
-        /* NOVO: Para Quem é o Treinamento */
+        /* Para Quem é o Treinamento */
         .target-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .target-box { background: var(--bg-card); border: 1px solid var(--border-color); padding: 30px; border-radius: 16px; text-align: center; }
         .target-box i { font-size: 2.5rem; color: var(--primary-gold); margin-bottom: 20px; }
@@ -183,18 +185,32 @@
         .lessons-list li { font-size: 0.98rem; color: #d1d5db; display: flex; align-items: flex-start; gap: 12px; }
         .lessons-list li i { color: var(--primary-gold); font-size: 0.9rem; margin-top: 6px; }
 
-        /* Bonuses */
-        .bonuses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        /* Bonuses Section */
+        .bonuses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 30px; }
         .bonus-card { background: linear-gradient(180deg, #131926 0%, #080b11 100%); border: 1px solid rgba(255, 184, 0, 0.3); border-radius: 20px; padding: 40px 30px; position: relative; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(255,184,0,0.05); }
         .bonus-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary-gold); color: #000; font-size: 0.8rem; font-weight: 900; padding: 6px 20px; border-radius: 30px; text-transform: uppercase; box-shadow: 0 5px 15px rgba(255,184,0,0.4); white-space: nowrap; }
+        
+        /* Destaque Exclusivo para o Super Bônus de Influenciadora */
+        .bonus-card.bonus-highlight {
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.15), 0 0 25px rgba(245, 158, 11, 0.1);
+            background: linear-gradient(180deg, #0e1e2d 0%, #080b11 100%);
+        }
+        .bonus-card.bonus-highlight .bonus-badge {
+            background: linear-gradient(90deg, #06b6d4, #3b82f6);
+            color: #ffffff;
+            box-shadow: 0 5px 15px rgba(6, 182, 212, 0.5);
+        }
+
         .bonus-icon { font-size: 3rem; color: var(--primary-gold); margin: 15px 0 25px; text-align: center; }
+        .bonus-card.bonus-highlight .bonus-icon { color: var(--accent-cyan); }
         .bonus-card h3 { font-size: 1.3rem; color: #fff; margin-bottom: 15px; font-weight: 800; text-align: center; }
         .bonus-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; text-align: center; }
         .bonus-value { border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.95rem; color: var(--text-muted); text-align: center; }
         .bonus-value del { color: var(--accent-red); font-weight: 700; }
         .bonus-value span { color: var(--accent-green); font-weight: 900; font-size: 1.1rem; display: block; margin-top: 5px; }
 
-        /* Testimonials with Real Photos */
+        /* Testimonials */
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .test-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 35px; position: relative; transition: transform 0.3s ease; }
         .test-card:hover { transform: translateY(-5px); border-color: rgba(255, 184, 0, 0.4); }
@@ -220,6 +236,8 @@
         .offer-features { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; text-align: left; margin-bottom: 40px; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 35px 0; }
         .offer-features li { font-size: 1.05rem; color: #f3f4f6; display: flex; align-items: center; gap: 12px; font-weight: 500; }
         .offer-features li i { color: var(--accent-green); font-size: 1.2rem; flex-shrink: 0; background: rgba(0,230,118,0.1); padding: 4px; border-radius: 50%; }
+        .offer-features li.feature-highlight { color: #ffffff; font-weight: 700; }
+        .offer-features li.feature-highlight i { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.15); }
 
         /* Payment Methods Box */
         .payment-methods-box { margin-top: 30px; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; padding: 15px 25px; background: rgba(255, 255, 255, 0.03); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); }
@@ -351,10 +369,10 @@
                     </div>
                 </div>
                 <div class="trust-card">
-                    <i class="fa-solid fa-sack-dollar"></i>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
                     <div>
-                        <h4>Multi-Monetização</h4>
-                        <p>Ganhe com afiliados, infoprodutos e monetização em dólar.</p>
+                        <h4>Influenciadora I.A.</h4>
+                        <p>Comerciais UGC gerados por I.A. para vender produtos físicos.</p>
                     </div>
                 </div>
             </div>
@@ -554,6 +572,7 @@
                     <ul class="lessons-list">
                         <li><i class="fa-solid fa-play"></i> Programa de Afiliado Exclusivo Adeus CLT com 50% de Comissão por venda.</li>
                         <li><i class="fa-solid fa-play"></i> Estratégia de Vendas de Produtos Físicos (Shopee, Amazon, Mercado Livre e Magalu).</li>
+                        <li><i class="fa-solid fa-play"></i> <strong>[NOVA AULA]</strong> Criação de Influenciadora com I.A. (Google OmniFlash & UGC Viral).</li>
                         <li><i class="fa-solid fa-play"></i> Monetização com Infoprodutos e PLRs de alta conversão.</li>
                         <li><i class="fa-solid fa-play"></i> Monetização Nativa de Conteúdo do Facebook (Ganhos em Dólar).</li>
                         <li><i class="fa-solid fa-play"></i> Ativação de Assinaturas, Membros e Estrelas na Meta.</li>
@@ -583,15 +602,18 @@
         </div>
     </section>
 
+    <!-- Seção de Bônus com o Super Bônus de Influenciadora -->
     <section style="background: rgba(255, 184, 0, 0.02); border-top: 1px solid rgba(255,184,0,0.1);">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">PRESENTES DE LANÇAMENTO</span>
                 <h2 class="section-title">Bônus Exclusivos de Elite Liberados Hoje</h2>
-                <p class="section-desc">Entrando nesta turma especial de lançamento, você leva gratuitamente todo esse pacote de aceleração que sozinho custaria mais de R$ 300:</p>
+                <p class="section-desc">Entrando nesta turma especial de lançamento, você leva gratuitamente todo esse arsenal de aceleração que sozinho custaria mais de R$ 400:</p>
             </div>
 
             <div class="bonuses-grid">
+                
+                <!-- Bônus 1: O Prompt de Ouro -->
                 <div class="bonus-card reveal">
                     <span class="bonus-badge">Bônus #1</span>
                     <div class="bonus-icon"><i class="fa-solid fa-file-code"></i></div>
@@ -600,6 +622,7 @@
                     <div class="bonus-value">Valor Real: <del>R$ 97,00</del> <span>HOJE: GRÁTIS</span></div>
                 </div>
 
+                <!-- Bônus 2: Afiliação VIP -->
                 <div class="bonus-card reveal delay-1">
                     <span class="bonus-badge">Bônus #2</span>
                     <div class="bonus-icon"><i class="fa-solid fa-handshake-angle"></i></div>
@@ -608,6 +631,7 @@
                     <div class="bonus-value">Valor Real: <del>Inestimável</del> <span>HOJE: LIBERADO</span></div>
                 </div>
 
+                <!-- Bônus 3: Checklist Anti-Block -->
                 <div class="bonus-card reveal delay-2">
                     <span class="bonus-badge">Bônus #3</span>
                     <div class="bonus-icon"><i class="fa-solid fa-shield-virus"></i></div>
@@ -616,13 +640,15 @@
                     <div class="bonus-value">Valor Real: <del>R$ 67,00</del> <span>HOJE: GRÁTIS</span></div>
                 </div>
 
-                <div class="bonus-card reveal delay-3">
-                    <span class="bonus-badge">Bônus #4</span>
-                    <div class="bonus-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
-                    <h3>Acesso Vitalício + Atualizações</h3>
-                    <p>Você garante seu acesso permanente. Todas as novas aulas, módulos futuros e atualizações do algoritmo serão suas sem pagar nada a mais.</p>
-                    <div class="bonus-value">Valor Real: <del>R$ 197/ano</del> <span>HOJE: VITALÍCIO</span></div>
+                <!-- SUPER BÔNUS VIP: A MÁQUINA DE INFLUENCIADORAS COM I.A. -->
+                <div class="bonus-card bonus-highlight reveal delay-3">
+                    <span class="bonus-badge">SUPER BÔNUS VIP</span>
+                    <div class="bonus-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>Fábrica de Influenciadoras com I.A.</h3>
+                    <p>O método completo para criar comerciais UGC de 20s com influenciadoras virtuais realistas no Google OmniFlash (lip-sync nativo em português) para vender qualquer produto físico sem comprar estoque e sem mostrar o rosto.</p>
+                    <div class="bonus-value">Valor Real: <del>R$ 147,00</del> <span>HOJE: 100% GRÁTIS</span></div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -702,10 +728,10 @@
                     <li><i class="fa-solid fa-check"></i> Treinamento Completo em Vídeo HD</li>
                     <li><i class="fa-solid fa-check"></i> Método de Edição Anti-Copyright (CapCut)</li>
                     <li><i class="fa-solid fa-check"></i> O Prompt de Ouro para ChatGPT</li>
-                    <li><i class="fa-solid fa-check"></i> Estratégia de Postagem Anti-Canibalização</li>
+                    <li class="feature-highlight"><i class="fa-solid fa-wand-magic-sparkles"></i> <strong>BÔNUS VIP:</strong> Influenciadora com I.A. (OmniFlash)</li>
+                    <li><i class="fa-solid fa-check"></i> Checklist do Escudo Anti-Block</li>
                     <li><i class="fa-solid fa-check"></i> Afiliação Exclusiva com 50% de Comissão</li>
                     <li><i class="fa-solid fa-check"></i> Esteira de Monetização em Dólar e Reais</li>
-                    <li><i class="fa-solid fa-check"></i> Acesso Vitalício (Sem Renovação)</li>
                     <li><i class="fa-solid fa-check"></i> Garantia Total Blindada de 7 Dias</li>
                 </ul>
 
@@ -763,7 +789,17 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutamente NÃO! O método Adeus CLT foi 100% estruturado para canais e páginas anônimas (Dark Channels). Você utiliza cortes de filmes, séries e curiosidades sem precisar colocar o rosto ou falar.</p>
+                        <p>Absolutamente NÃO! O método Adeus CLT foi 100% estruturado para canais e páginas anônimas (Dark Channels). Você utiliza cortes de filmes, séries e curiosidades sem precisar colocar o rosto ou falar. E agora, com nosso bônus de I.A., você cria comerciais com influenciadoras virtuais sem gastar R$ 1 em produtos e sem se expor.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Vou ter que pagar caro para usar essas ferramentas de Inteligência Artificial?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não! Ensinamos você a usar as ferramentas gratuitas e mostramos o passo a passo exato para aproveitar as brechas promocionais (como o Google One por R$ 10 ou teste grátis de 30 dias), gerando dezenas de comerciais em vídeo a custo praticamente zero.</p>
                     </div>
                 </div>
 
@@ -877,15 +913,13 @@
         window.addEventListener("scroll", reveal);
         reveal(); // Trigger on load
 
-        // Cronômetro Inteligente com LocalStorage (Memória de Atualização)
+        // Cronômetro Inteligente com LocalStorage
         function startSmartTimer() {
             const displays = document.querySelectorAll('#timer, .countdown-timer');
             let endTime = localStorage.getItem('adeusCltOfferEnd');
             const now = new Date().getTime();
 
-            // Se não existe timer salvo ou se já expirou, cria um novo
             if (!endTime || now > endTime) {
-                // Sorteia um tempo aleatório entre 12 e 22 minutos
                 const randomMinutes = Math.floor(Math.random() * (22 - 12 + 1)) + 12;
                 endTime = now + (randomMinutes * 60 * 1000);
                 localStorage.setItem('adeusCltOfferEnd', endTime);
@@ -895,24 +929,19 @@
                 const currentTime = new Date().getTime();
                 let distance = endTime - currentTime;
 
-                // Se o tempo zerar
                 if (distance < 0) {
                     clearInterval(x);
-                    // Reinicia a janela para 2 horas (para manter uma escassez viável pro cliente que voltar depois)
                     endTime = new Date().getTime() + (2 * 60 * 60 * 1000);
                     localStorage.setItem('adeusCltOfferEnd', endTime);
-                    startSmartTimer(); // Roda a função de novo
+                    startSmartTimer();
                     return;
                 }
 
-                // Cálculos de tempo
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Agrupa as horas em minutos se o timer reiniciar para 2h (ex: mostra 120:00 ao invés de 2:00:00)
                 const displayMinutes = (hours * 60) + minutes; 
-                
                 const formattedMinutes = displayMinutes < 10 ? "0" + displayMinutes : displayMinutes;
                 const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
 
@@ -931,7 +960,6 @@
             item.addEventListener('click', () => {
                 const parent = item.parentElement;
                 
-                // Fechar os outros
                 document.querySelectorAll('.faq-item').forEach(child => {
                     if (child !== parent) {
                         child.classList.remove('active');
@@ -1001,7 +1029,6 @@
             }, 5000);
         }
 
-        // Inicia a primeira notificação após 4 segundos e repete a cada 14 segundos
         setTimeout(() => {
             showNextToast();
             setInterval(showNextToast, 14000);
