@@ -91,10 +91,10 @@
       line-height: 1.7;
     }
 
-    /* Quick Access Toolbar */
+    /* Tools Grid */
     .tools-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 16px;
       margin-bottom: 40px;
     }
@@ -102,8 +102,8 @@
     .tool-card {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 16px 20px;
+      gap: 14px;
+      padding: 16px 18px;
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 14px;
@@ -111,37 +111,108 @@
       color: var(--text-main);
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       backdrop-filter: blur(12px);
+      position: relative;
     }
 
     .tool-card:hover {
       border-color: var(--border-highlight);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .tool-icon-wrapper {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+
+    .tool-card:hover .tool-icon-wrapper {
+      background: rgba(245, 158, 11, 0.12);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .tool-icon {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2;
+    }
+
+    .tool-info {
+      flex: 1;
+      min-width: 0;
     }
 
     .tool-info h4 {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 700;
       color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .tool-info p {
-      font-size: 0.8rem;
+      font-size: 0.76rem;
       color: var(--text-dim);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .tool-card svg {
-      width: 18px;
-      height: 18px;
+    .arrow-icon {
+      width: 16px;
+      height: 16px;
+      stroke: var(--text-dim);
+      transition: transform 0.2s ease, stroke 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .tool-card:hover .arrow-icon {
+      transform: translateX(3px);
       stroke: var(--gold-primary);
-      transition: transform 0.2s ease;
     }
 
-    .tool-card:hover svg {
-      transform: translateX(4px);
+    /* Banner / Tip */
+    .alert-box {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(6, 182, 212, 0.05) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 36px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
     }
 
-    /* Content Cards */
+    .alert-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      stroke: var(--gold-light);
+      margin-top: 2px;
+    }
+
+    .alert-content h4 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .alert-content p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Cards */
     .card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
@@ -162,7 +233,7 @@
     }
 
     .card-title-row h3 {
-      font-size: 1.2rem;
+      font-size: 1.18rem;
       font-weight: 700;
       color: #fff;
       display: flex;
@@ -189,7 +260,7 @@
       margin-bottom: 16px;
     }
 
-    /* Code & Prompt Boxes */
+    /* Code Box & Copy Button */
     .code-container {
       position: relative;
       background: var(--code-bg);
@@ -234,39 +305,6 @@
       background: rgba(16, 185, 129, 0.15);
       border-color: var(--accent-green);
       color: var(--accent-green);
-    }
-
-    /* Highlight Banner */
-    .alert-box {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(6, 182, 212, 0.05) 100%);
-      border: 1px solid rgba(245, 158, 11, 0.25);
-      border-radius: 14px;
-      padding: 20px;
-      margin-bottom: 32px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-
-    .alert-icon {
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      stroke: var(--gold-light);
-      margin-top: 2px;
-    }
-
-    .alert-content h4 {
-      font-size: 0.98rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-
-    .alert-content p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.6;
     }
 
     /* Specs Table */
@@ -316,7 +354,7 @@
       color: var(--gold-light);
     }
 
-    /* Steps Visual Checklist */
+    /* Continuity Protocol */
     .steps-list {
       list-style: none;
       display: grid;
@@ -328,7 +366,7 @@
       display: flex;
       gap: 14px;
       align-items: flex-start;
-      padding: 14px;
+      padding: 16px;
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.04);
       border-radius: 10px;
@@ -386,45 +424,87 @@
     <!-- Top Badge & Header -->
     <div class="header-badge">Módulo 8 • Aula 8.4</div>
     <h1>Criação de Influenciadora com I.A.</h1>
-    <p class="subtitle">Aprenda a fabricar vídeos em formato UGC de alta conversão para Shopee, Amazon, Mercado Livre e Magalu usando o novo motor Google OmniFlash, com lip-sync nativo e sem comprar o produto físico.</p>
+    <p class="subtitle">Guia completo e material de apoio para geração de vídeos UGC de alta conversão para Shopee, Amazon, Mercado Livre e Magalu usando o motor Google OmniFlash dentro da ferramenta Google Flow.</p>
 
-    <!-- Quick Access Tool Links -->
+    <!-- Quick Access Tool Links with Custom SVGs -->
     <div class="tools-grid">
+      
+      <!-- 1. ChatGPT -->
       <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="tool-card">
+        <div class="tool-icon-wrapper">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="#10b981">
+            <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"></path>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+        </div>
         <div class="tool-info">
           <h4>1. ChatGPT</h4>
           <p>Imagem Base & Roteirista</p>
         </div>
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </a>
 
+      <!-- 2. Google One -->
       <a href="https://one.google.com" target="_blank" rel="noopener noreferrer" class="tool-card">
-        <div class="tool-info">
-          <h4>2. Google OmniFlash</h4>
-          <p>Motor de Vídeo com Lip-Sync</p>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="#f59e0b">
+            <path d="M6 18h12a4 4 0 0 0 0-8 6 6 0 0 0-11.66-1.5A4 4 0 0 0 6 18z"></path>
+            <path d="M12 12v4m-2-2h4"></path>
+          </svg>
         </div>
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        <div class="tool-info">
+          <h4>2. Google One</h4>
+          <p>Assinar / Promoção R$ 10</p>
+        </div>
+        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </a>
 
-      <a href="https://www.capcut.com" target="_blank" rel="noopener noreferrer" class="tool-card">
+      <!-- 3. Google Flow (OmniFlash) -->
+      <a href="https://flow.google.com/" target="_blank" rel="noopener noreferrer" class="tool-card">
+        <div class="tool-icon-wrapper">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="#06b6d4">
+            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="12" r="2"></circle>
+          </svg>
+        </div>
         <div class="tool-info">
-          <h4>3. CapCut Desktop / Mobile</h4>
+          <h4>3. Google Flow</h4>
+          <p>Gerador de Vídeo (OmniFlash)</p>
+        </div>
+        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+
+      <!-- 4. CapCut -->
+      <a href="https://www.capcut.com" target="_blank" rel="noopener noreferrer" class="tool-card">
+        <div class="tool-icon-wrapper">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="#ec4899">
+            <circle cx="6" cy="6" r="3"></circle>
+            <circle cx="6" cy="18" r="3"></circle>
+            <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+            <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+            <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+          </svg>
+        </div>
+        <div class="tool-info">
+          <h4>4. CapCut</h4>
           <p>Fusão, Legendas & CTA</p>
         </div>
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </a>
+
     </div>
 
-    <!-- Alert / Google One Promo Tip -->
+    <!-- Alert Box: Google One Credits -->
     <div class="alert-box">
       <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
       <div class="alert-content">
-        <h4>Oportunidade Google One: Vídeos a Preço Simbólico</h4>
-        <p>Acesse a aba de planos do Google One para assinar o primeiro mês promocional (frequentemente por R$ 10 ou com 30 dias de teste grátis). Essa brecha libera saldo de créditos suficiente para gerar dezenas de comerciais completos com o motor OmniFlash a custo quase zero.</p>
+        <h4>Estratégia de Créditos Baratos com Google One</h4>
+        <p>Acesse o link do <strong>Google One</strong> acima e verifique as opções de planos. O Google frequentemente concede o primeiro mês promocional por <strong>R$ 10</strong> ou até <strong>30 dias de teste grátis</strong>. Assine para receber saldo de créditos e gerar dezenas de comerciais completos com o motor <strong>OmniFlash</strong> dentro do <strong>Google Flow</strong> pagando praticamente nada.</p>
       </div>
     </div>
 
-    <!-- Prompt 1: Foto Base -->
+    <!-- Card 1: Imagem Base -->
     <div class="card">
       <div class="card-title-row">
         <h3><span>1</span> Foto Base da Criadora (ChatGPT)</h3>
@@ -433,22 +513,22 @@
           Copiar Prompt
         </button>
       </div>
-      <p class="instruction-text">Tire um print limpo do produto na loja de afiliado, faça o upload no ChatGPT e cole este comando em inglês. Ele trava as duas mãos da modelo segurando o objeto para blindar contra deformações.</p>
+      <p class="instruction-text">Tire um print limpo do produto na loja de afiliados, faça o upload da imagem no ChatGPT e envie este comando em inglês. Ele ancora as duas mãos da modelo segurando o objeto na altura do peito, impedindo distorções anatômicas na fase de vídeo.</p>
       <div class="code-container">
         <pre id="prompt1">A realistic, candid iPhone photo of an attractive 25-year-old Brazilian woman inside a bright, modern, cozy apartment living room. She has a warm, charismatic, and natural expression, looking directly at the camera like a content creator. She is holding the exact product from the reference image naturally with both hands locked at chest level, presenting it clearly to the camera. Soft daylight coming from a window, authentic domestic background with subtle depth of field, real skin texture, no artificial beauty filters, shot on iPhone 15 Pro, 4k resolution.</pre>
       </div>
     </div>
 
-    <!-- Prompt Auxiliar: Roteirista Viral -->
+    <!-- Card 2: Roteirista Viral Auxiliar -->
     <div class="card">
       <div class="card-title-row">
-        <h3><span>2</span> Comando Auxiliar de Roteiro em 2 Cenas (ChatGPT)</h3>
+        <h3><span>2</span> Comando Auxiliar de Roteiro Viral em 2 Cenas (ChatGPT)</h3>
         <button class="copy-btn" onclick="copyToClipboard('prompt2', this)">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           Copiar Comando
         </button>
       </div>
-      <p class="instruction-text">Cole este comando no ChatGPT e, logo abaixo dele (na mesma mensagem), adicione toda a descrição do produto que você copiou da página de vendas.</p>
+      <p class="instruction-text">Cole este comando no ChatGPT e, logo abaixo dele (na mesma mensagem), adicione toda a descrição do produto que você copiou da página de vendas da loja.</p>
       <div class="code-container">
         <pre id="prompt2">Você é um copywriter de elite especializado em vídeos virais de UGC para TikTok, Reels e Shopee Vídeo.
 
@@ -473,12 +553,12 @@ Entregue o resultado estritamente neste formato para que eu possa copiar:
       </div>
     </div>
 
-    <!-- Specs Table -->
+    <!-- Card 3: Parâmetros no Google Flow -->
     <div class="card">
       <div class="card-title-row">
-        <h3><span>3</span> Configuração Cirúrgica no Google OmniFlash</h3>
+        <h3><span>3</span> Configuração Cirúrgica no Google Flow (OmniFlash)</h3>
       </div>
-      <p class="instruction-text">Ajuste os parâmetros antes de renderizar para economizar créditos e evitar disparos duplicados:</p>
+      <p class="instruction-text">Dentro do painel do <strong>Google Flow</strong>, configure os parâmetros exatamente como na tabela abaixo antes de renderizar para economizar créditos e evitar disparos duplicados:</p>
       <div class="table-container">
         <table>
           <thead>
@@ -492,90 +572,90 @@ Entregue o resultado estritamente neste formato para que eu possa copiar:
             <tr>
               <td><strong>Aba Principal</strong></td>
               <td><span class="tag">Vídeo (Elementos)</span></td>
-              <td>Habilita animação de avatar a partir de foto de referência</td>
+              <td>Habilita a geração a partir da imagem base da influenciadora</td>
             </tr>
             <tr>
-              <td><strong>Proporção</strong></td>
+              <td><strong>Proporção (Aspect Ratio)</strong></td>
               <td><span class="tag">9:16 (Vertical)</span></td>
               <td>Formato tela cheia para Stories, Reels, TikTok e Shopee Vídeo</td>
             </tr>
             <tr>
               <td><strong>Motor de Geração</strong></td>
               <td><span class="tag">OmniFlash</span></td>
-              <td>Modelo Google com sincronia labial e expressividade natural</td>
+              <td>O modelo mais recente do Google para lip-sync e expressões reais</td>
             </tr>
             <tr>
               <td><strong>Resolução</strong></td>
               <td><span class="tag">720p</span></td>
-              <td>Processamento rápido e alta definição mobile</td>
+              <td>Renderização ultra rápida e alta nitidez em telas mobile</td>
             </tr>
             <tr>
-              <td><strong>Duração</strong></td>
+              <td><strong>Duração do Vídeo</strong></td>
               <td><span class="tag">10 segundos</span></td>
-              <td>Consome apenas 15 créditos por tomada</td>
+              <td>Consome apenas 15 créditos por tomada (8s custa 12 créditos)</td>
             </tr>
             <tr>
               <td><strong>Quantidade por Vez</strong></td>
               <td><span class="tag">1x (Apenas um vídeo)</span></td>
-              <td>Impede gastar o dobro de créditos gerando versões idênticas</td>
+              <td>Impede o consumo dobrado de créditos em gerações duplicadas</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <!-- Prompt 3: Vídeo OmniFlash -->
+    <!-- Card 4: Prompt OmniFlash -->
     <div class="card">
       <div class="card-title-row">
-        <h3><span>4</span> Prompt de Renderização com Lip-Sync (OmniFlash)</h3>
+        <h3><span>4</span> Prompt de Renderização com Lip-Sync (Google Flow)</h3>
         <button class="copy-btn" onclick="copyToClipboard('prompt3', this)">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           Copiar Prompt
         </button>
       </div>
-      <p class="instruction-text">Suba a imagem de entrada e use este comando com as travas anatômicas blindadas. Substitua o texto em português entre aspas pela fala correspondente (Cena 1 na primeira geração; Cena 2 na segunda geração).</p>
+      <p class="instruction-text">Suba a imagem de referência no Google Flow e cole este comando com as travas anatômicas ativas. Substitua o texto em português entre aspas pela fala correspondente gerada pelo ChatGPT (Cena 1 na primeira execução; Cena 2 na segunda execução).</p>
       <div class="code-container">
         <pre id="prompt3">Cinematic handheld UGC video of the woman in the image inside a cozy modern living room. She holds the product steadily with both hands locked at chest level, presenting it to the camera with high stability throughout the entire shot. Absolute anatomical precision: exactly two arms, exactly two hands, ten fingers total, strictly no third hand, no extra arm appearing, no phantom limbs, no duplicate hands, no morphing fingers. Both hands stay visibly anchored to the device during the whole video. Natural eye contact, warm smile, hyper-realistic facial expressions, and perfect lip-sync.
 
 Spoken dialogue in Brazilian Portuguese:
-"COLE_AQUI_A_FALA_DA_CENA_GERADA_PELO_CHATGPT"</pre>
+"COLE_AQUI_O_TEXTO_DA_CENA_CORRESPONDENTE"</pre>
       </div>
     </div>
 
-    <!-- The Last Frame Continuity Protocol -->
+    <!-- Card 5: O Truque do Último Frame -->
     <div class="card">
       <div class="card-title-row">
-        <h3><span>5</span> O Truque do Último Frame (Continuidade Perfeita)</h3>
+        <h3><span>5</span> O Protocolo de Continuidade (O Truque do Último Frame)</h3>
       </div>
-      <p class="instruction-text">Siga este roteiro passo a passo para criar comerciais de 20 segundos contínuos sem corte de rosto ou cenário:</p>
+      <p class="instruction-text">Siga este roteiro passo a passo para criar comerciais de 20 segundos contínuos sem corte no rosto, roupa ou cenário:</p>
       
       <ul class="steps-list">
         <li class="steps-item">
           <div class="step-number">1</div>
           <div class="step-text">
-            <h5>Gerar Cena 1</h5>
-            <p>Suba a foto inicial criada no ChatGPT, cole o Prompt com a fala da Cena 1 e renderize o clipe de 10 segundos.</p>
+            <h5>Gerar a Cena 1 no Google Flow</h5>
+            <p>Carregue a foto base gerada no ChatGPT, cole o Prompt #3 com a fala da Cena 1 e processe o vídeo de 10 segundos.</p>
           </div>
         </li>
         <li class="steps-item">
           <div class="step-number">2</div>
           <div class="step-text">
-            <h5>Baixar o Último Frame</h5>
-            <p>No canto superior do vídeo pronto da Cena 1, abra o menu de opções e faça o download do último frame (a imagem do milissegundo final).</p>
+            <h5>Baixar o Último Frame da Cena 1</h5>
+            <p>No canto superior do vídeo pronto dentro do Google Flow, clique no menu de opções e salve a foto do último frame (o milissegundo final da Cena 1).</p>
           </div>
         </li>
         <li class="steps-item">
           <div class="step-number">3</div>
           <div class="step-text">
-            <h5>Gerar Cena 2 Contínua</h5>
-            <p>Carregue a foto do último frame como a nova imagem de entrada no OmniFlash, substitua o diálogo pela fala da Cena 2 e gere o segundo clipe.</p>
+            <h5>Gerar a Cena 2 Contínua</h5>
+            <p>Suba a imagem do último frame como a nova imagem de entrada no Google Flow, cole a fala da Cena 2 no Prompt #3 e renderize o segundo clipe.</p>
           </div>
         </li>
         <li class="steps-item">
           <div class="step-number">4</div>
           <div class="step-text">
             <h5>Fusão Final no CapCut</h5>
-            <p>Una os dois clipes na linha do tempo, adicione legendas automáticas animadas e posicione uma seta chamativa indicando o link na base do vídeo.</p>
+            <p>Junte as duas cenas na linha do tempo para formar um comercial fluido de 20 segundos, aplique legendas dinâmicas e insira o sticker de CTA apontando para o link.</p>
           </div>
         </li>
       </ul>
