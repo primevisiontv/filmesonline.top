@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 8.4: Criação de Influenciadora Virtual com I.A. | Material Complementar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #08090d;
+      --bg-surface: #10121a;
+      --bg-card: rgba(18, 21, 31, 0.75);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-highlight: rgba(245, 158, 11, 0.35);
+      --gold-primary: #f59e0b;
+      --gold-light: #fbbf24;
+      --cyan-neon: #06b6d4;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --accent-green: #10b981;
+      --code-bg: #090a0f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(245, 158, 11, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(6, 182, 212, 0.06) 0%, transparent 45%);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      padding: 40px 20px 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Badge & Header */
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .header-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--gold-light);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--gold-light);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 40%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    /* Quick Access Toolbar */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .tool-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(12px);
+    }
+
+    .tool-card:hover {
+      border-color: var(--border-highlight);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .tool-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .tool-info p {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .tool-card svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gold-primary);
+      transition: transform 0.2s ease;
+    }
+
+    .tool-card:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* Content Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 32px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .card-title-row h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-title-row h3 span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--gold-light);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .instruction-text {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    /* Code & Prompt Boxes */
+    .code-container {
+      position: relative;
+      background: var(--code-bg);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      color: #e5e7eb;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.65;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+    }
+
+    .copy-btn.copied {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+    }
+
+    /* Highlight Banner */
+    .alert-box {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(6, 182, 212, 0.05) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 32px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .alert-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      stroke: var(--gold-light);
+      margin-top: 2px;
+    }
+
+    .alert-content h4 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .alert-content p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Specs Table */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-muted);
+      font-weight: 600;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-subtle);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: #e5e7eb;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 8px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--gold-light);
+    }
+
+    /* Steps Visual Checklist */
+    .steps-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .steps-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background: var(--cyan-neon);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.75rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-text h5 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .step-text p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 24px 14px 60px;
+      }
+      .card {
+        padding: 20px 16px;
+      }
+      .card-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .copy-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Top Badge & Header -->
+    <div class="header-badge">Módulo 8 • Aula 8.4</div>
+    <h1>Criação de Influenciadora com I.A.</h1>
+    <p class="subtitle">Aprenda a fabricar vídeos em formato UGC de alta conversão para Shopee, Amazon, Mercado Livre e Magalu usando o novo motor Google OmniFlash, com lip-sync nativo e sem comprar o produto físico.</p>
+
+    <!-- Quick Access Tool Links -->
+    <div class="tools-grid">
+      <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="tool-card">
+        <div class="tool-info">
+          <h4>1. ChatGPT</h4>
+          <p>Imagem Base & Roteirista</p>
+        </div>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a>
+
+      <a href="https://one.google.com" target="_blank" rel="noopener noreferrer" class="tool-card">
+        <div class="tool-info">
+          <h4>2. Google OmniFlash</h4>
+          <p>Motor de Vídeo com Lip-Sync</p>
+        </div>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a>
+
+      <a href="https://www.capcut.com" target="_blank" rel="noopener noreferrer" class="tool-card">
+        <div class="tool-info">
+          <h4>3. CapCut Desktop / Mobile</h4>
+          <p>Fusão, Legendas & CTA</p>
+        </div>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a>
+    </div>
+
+    <!-- Alert / Google One Promo Tip -->
+    <div class="alert-box">
+      <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      <div class="alert-content">
+        <h4>Oportunidade Google One: Vídeos a Preço Simbólico</h4>
+        <p>Acesse a aba de planos do Google One para assinar o primeiro mês promocional (frequentemente por R$ 10 ou com 30 dias de teste grátis). Essa brecha libera saldo de créditos suficiente para gerar dezenas de comerciais completos com o motor OmniFlash a custo quase zero.</p>
+      </div>
+    </div>
+
+    <!-- Prompt 1: Foto Base -->
+    <div class="card">
+      <div class="card-title-row">
+        <h3><span>1</span> Foto Base da Criadora (ChatGPT)</h3>
+        <button class="copy-btn" onclick="copyToClipboard('prompt1', this)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Copiar Prompt
+        </button>
+      </div>
+      <p class="instruction-text">Tire um print limpo do produto na loja de afiliado, faça o upload no ChatGPT e cole este comando em inglês. Ele trava as duas mãos da modelo segurando o objeto para blindar contra deformações.</p>
+      <div class="code-container">
+        <pre id="prompt1">A realistic, candid iPhone photo of an attractive 25-year-old Brazilian woman inside a bright, modern, cozy apartment living room. She has a warm, charismatic, and natural expression, looking directly at the camera like a content creator. She is holding the exact product from the reference image naturally with both hands locked at chest level, presenting it clearly to the camera. Soft daylight coming from a window, authentic domestic background with subtle depth of field, real skin texture, no artificial beauty filters, shot on iPhone 15 Pro, 4k resolution.</pre>
+      </div>
+    </div>
+
+    <!-- Prompt Auxiliar: Roteirista Viral -->
+    <div class="card">
+      <div class="card-title-row">
+        <h3><span>2</span> Comando Auxiliar de Roteiro em 2 Cenas (ChatGPT)</h3>
+        <button class="copy-btn" onclick="copyToClipboard('prompt2', this)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Copiar Comando
+        </button>
+      </div>
+      <p class="instruction-text">Cole este comando no ChatGPT e, logo abaixo dele (na mesma mensagem), adicione toda a descrição do produto que você copiou da página de vendas.</p>
+      <div class="code-container">
+        <pre id="prompt2">Você é um copywriter de elite especializado em vídeos virais de UGC para TikTok, Reels e Shopee Vídeo.
+
+Com base nas características e na descrição do produto coladas abaixo, crie um roteiro magnético dividido EXATAMENTE em 2 cenas contínuas de 10 segundos cada (cerca de 25 a 28 palavras por cena). 
+
+Diretrizes obrigatórias de tom e estilo:
+1. Linguagem 100% natural, coloquial e espontânea de uma brasileira de 25 anos falando para a câmera do celular (use termos como "Gente, sério...", "Olha isso aqui", "Tô chocada", "Melhor achadinho").
+2. Zero linguagem engessada ou corporativa de comercial tradicional.
+3. CENA 1 (Gancho + Demonstração): Precisa abrir quebrando o padrão para prender a atenção nos primeiros 2 segundos, falar da dor ou benefício principal e terminar com uma deixa de continuidade.
+4. CENA 2 (Comprovação + Chamada de Ação): Continua a mesma linha de raciocínio de forma fluida, reforça a qualidade/preço baixo e finaliza com um direcionamento claro apontando para o link abaixo.
+
+Entregue o resultado estritamente neste formato para que eu possa copiar:
+
+[CENA 1 - Duração: 10 segundos]
+(Texto exato da fala)
+
+[CENA 2 - Duração: 10 segundos]
+(Texto exato da fala)
+
+--- DESCRIÇÃO DO PRODUTO: ---
+[COLE AQUI A DESCRIÇÃO COPIADA DA LOJA]</pre>
+      </div>
+    </div>
+
+    <!-- Specs Table -->
+    <div class="card">
+      <div class="card-title-row">
+        <h3><span>3</span> Configuração Cirúrgica no Google OmniFlash</h3>
+      </div>
+      <p class="instruction-text">Ajuste os parâmetros antes de renderizar para economizar créditos e evitar disparos duplicados:</p>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Parâmetro</th>
+              <th>Configuração Correta</th>
+              <th>Finalidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Aba Principal</strong></td>
+              <td><span class="tag">Vídeo (Elementos)</span></td>
+              <td>Habilita animação de avatar a partir de foto de referência</td>
+            </tr>
+            <tr>
+              <td><strong>Proporção</strong></td>
+              <td><span class="tag">9:16 (Vertical)</span></td>
+              <td>Formato tela cheia para Stories, Reels, TikTok e Shopee Vídeo</td>
+            </tr>
+            <tr>
+              <td><strong>Motor de Geração</strong></td>
+              <td><span class="tag">OmniFlash</span></td>
+              <td>Modelo Google com sincronia labial e expressividade natural</td>
+            </tr>
+            <tr>
+              <td><strong>Resolução</strong></td>
+              <td><span class="tag">720p</span></td>
+              <td>Processamento rápido e alta definição mobile</td>
+            </tr>
+            <tr>
+              <td><strong>Duração</strong></td>
+              <td><span class="tag">10 segundos</span></td>
+              <td>Consome apenas 15 créditos por tomada</td>
+            </tr>
+            <tr>
+              <td><strong>Quantidade por Vez</strong></td>
+              <td><span class="tag">1x (Apenas um vídeo)</span></td>
+              <td>Impede gastar o dobro de créditos gerando versões idênticas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Prompt 3: Vídeo OmniFlash -->
+    <div class="card">
+      <div class="card-title-row">
+        <h3><span>4</span> Prompt de Renderização com Lip-Sync (OmniFlash)</h3>
+        <button class="copy-btn" onclick="copyToClipboard('prompt3', this)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Copiar Prompt
+        </button>
+      </div>
+      <p class="instruction-text">Suba a imagem de entrada e use este comando com as travas anatômicas blindadas. Substitua o texto em português entre aspas pela fala correspondente (Cena 1 na primeira geração; Cena 2 na segunda geração).</p>
+      <div class="code-container">
+        <pre id="prompt3">Cinematic handheld UGC video of the woman in the image inside a cozy modern living room. She holds the product steadily with both hands locked at chest level, presenting it to the camera with high stability throughout the entire shot. Absolute anatomical precision: exactly two arms, exactly two hands, ten fingers total, strictly no third hand, no extra arm appearing, no phantom limbs, no duplicate hands, no morphing fingers. Both hands stay visibly anchored to the device during the whole video. Natural eye contact, warm smile, hyper-realistic facial expressions, and perfect lip-sync.
+
+Spoken dialogue in Brazilian Portuguese:
+"COLE_AQUI_A_FALA_DA_CENA_GERADA_PELO_CHATGPT"</pre>
+      </div>
+    </div>
+
+    <!-- The Last Frame Continuity Protocol -->
+    <div class="card">
+      <div class="card-title-row">
+        <h3><span>5</span> O Truque do Último Frame (Continuidade Perfeita)</h3>
+      </div>
+      <p class="instruction-text">Siga este roteiro passo a passo para criar comerciais de 20 segundos contínuos sem corte de rosto ou cenário:</p>
+      
+      <ul class="steps-list">
+        <li class="steps-item">
+          <div class="step-number">1</div>
+          <div class="step-text">
+            <h5>Gerar Cena 1</h5>
+            <p>Suba a foto inicial criada no ChatGPT, cole o Prompt com a fala da Cena 1 e renderize o clipe de 10 segundos.</p>
+          </div>
+        </li>
+        <li class="steps-item">
+          <div class="step-number">2</div>
+          <div class="step-text">
+            <h5>Baixar o Último Frame</h5>
+            <p>No canto superior do vídeo pronto da Cena 1, abra o menu de opções e faça o download do último frame (a imagem do milissegundo final).</p>
+          </div>
+        </li>
+        <li class="steps-item">
+          <div class="step-number">3</div>
+          <div class="step-text">
+            <h5>Gerar Cena 2 Contínua</h5>
+            <p>Carregue a foto do último frame como a nova imagem de entrada no OmniFlash, substitua o diálogo pela fala da Cena 2 e gere o segundo clipe.</p>
+          </div>
+        </li>
+        <li class="steps-item">
+          <div class="step-number">4</div>
+          <div class="step-text">
+            <h5>Fusão Final no CapCut</h5>
+            <p>Una os dois clipes na linha do tempo, adicione legendas automáticas animadas e posicione uma seta chamativa indicando o link na base do vídeo.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script>
+    function copyToClipboard(elementId, button) {
+      const textToCopy = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = button.innerHTML;
+        button.classList.add('copied');
+        button.innerHTML = `
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Copiado!
+        `;
+        setTimeout(() => {
+          button.classList.remove('copied');
+          button.innerHTML = originalText;
+        }, 2200);
+      }).catch(err => {
+        console.error('Erro ao copiar texto:', err);
+      });
+    }
+  </script>
+
+</body>
+</html>
