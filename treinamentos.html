@@ -1,196 +1,250 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo de Caso: O Fenômeno dos Perfis Temáticos de Vídeos Curtos</title>
+    <link rel="icon" type="image/png" href="https://primevisionplay.com.br/favicon.jpeg">
+    <meta name="description" content="Entenda como novos criadores digitais estão aproveitando o algoritmo de vídeos curtos no Instagram e Facebook para construir audiências massivas pelo celular.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18469830809"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'AW-18469830809');
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treinamento de Edição no Celular | Apresentação Oficial</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        :root {
+            --bg-dark: #07090e;
+            --bg-card: #0f141f;
+            --border: rgba(255, 255, 255, 0.08);
+            --primary-gold: #ffb800;
+            --accent-green: #00e676;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+            --font-heading: 'Space Grotesk', sans-serif;
         }
 
-        body {
-            background-color: #0b0c10;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 100vh;
-            padding: 20px 15px;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
+
+        /* Top Nav Editorial */
+        .top-nav {
+            border-bottom: 1px solid var(--border); background: rgba(7, 9, 14, 0.95);
+            padding: 14px 20px; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px);
+        }
+        .nav-inner {
+            max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo-editorial { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+        .logo-editorial span { color: var(--primary-gold); }
+        .badge-editorial {
+            font-size: 0.75rem; background: rgba(255, 184, 0, 0.1); color: var(--primary-gold);
+            padding: 4px 10px; border-radius: 20px; font-weight: 700; border: 1px solid rgba(255, 184, 0, 0.3);
+            text-transform: uppercase; letter-spacing: 0.5px;
         }
 
-        .container {
-            max-width: 540px;
-            margin: 40px auto auto auto;
-            background: #15171e;
-            border: 1px solid #232733;
-            border-radius: 16px;
-            padding: 35px 25px;
-            text-align: center;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
-        }
+        /* Container do Artigo */
+        .article-container { max-width: 820px; margin: 40px auto 60px; padding: 0 20px; }
 
-        .badge {
-            display: inline-block;
-            background: rgba(34, 197, 94, 0.12);
-            color: #22c55e;
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            font-size: 12px;
-            font-weight: 700;
-            padding: 6px 14px;
-            border-radius: 20px;
-            margin-bottom: 22px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
+        .article-header { margin-bottom: 30px; }
+        .category-tag {
+            color: var(--accent-green); font-size: 0.85rem; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 1.5px; margin-bottom: 12px; display: inline-block;
         }
-
-        h1 {
-            font-size: 23px;
-            font-weight: 700;
-            line-height: 1.35;
-            color: #ffffff;
-            margin-bottom: 16px;
+        .article-title {
+            font-family: var(--font-heading); font-size: 2.3rem; line-height: 1.25; font-weight: 800;
+            color: #ffffff; margin-bottom: 18px;
         }
-
-        p.subtitle {
-            font-size: 15px;
-            color: #9a9cae;
-            line-height: 1.6;
-            margin-bottom: 28px;
+        .article-meta {
+            display: flex; align-items: center; gap: 15px; font-size: 0.88rem; color: var(--text-muted);
+            border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px;
         }
+        .article-meta span { display: flex; align-items: center; gap: 6px; }
 
-        .cta-btn {
-            display: block;
-            width: 100%;
-            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-            color: #ffffff;
-            font-size: 17px;
-            font-weight: 700;
-            text-decoration: none;
-            padding: 18px 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.35);
-            transition: all 0.2s ease-in-out;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        /* Corpo do Texto */
+        .article-content p { font-size: 1.1rem; color: #d1d5db; margin-bottom: 22px; font-weight: 400; }
+        .article-content strong { color: #ffffff; font-weight: 700; }
+        
+        /* Destaque / Citação */
+        .highlight-box {
+            background: var(--bg-card); border-left: 4px solid var(--primary-gold);
+            padding: 24px 25px; border-radius: 0 16px 16px 0; margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
+        .highlight-box h4 { font-size: 1.15rem; color: #fff; margin-bottom: 8px; font-weight: 700; }
+        .highlight-box p { font-size: 1rem; color: var(--text-muted); margin: 0; }
 
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(34, 197, 94, 0.5);
-            background: linear-gradient(135deg, #25d366 0%, #15803d 100%);
+        /* Card de Pré-Visualização / Chamada */
+        .preview-card {
+            background: linear-gradient(180deg, #131a29 0%, #0c1017 100%);
+            border: 1px solid rgba(255, 184, 0, 0.35); border-radius: 20px; padding: 35px 30px;
+            margin: 40px 0; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            position: relative; overflow: hidden;
         }
-
-        .features {
-            margin-top: 24px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            font-size: 12px;
-            color: #6b7280;
+        .preview-card::after {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255, 184, 0, 0.05) 0%, transparent 60%); pointer-events: none;
         }
+        .preview-card h3 { font-size: 1.6rem; color: #fff; margin-bottom: 12px; font-weight: 800; }
+        .preview-card p { font-size: 1.05rem; color: #9ca3af; max-width: 600px; margin: 0 auto 25px; }
 
-        .features span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
+        /* Botão Ponte (CTA da Pré-Sell) */
+        .btn-bridge {
+            display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+            background: linear-gradient(180deg, #00ff88 0%, #009940 100%); color: #00220a;
+            text-decoration: none; padding: 20px 40px; border-radius: 14px; font-weight: 900;
+            font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.5px;
+            box-shadow: 0 12px 30px rgba(0, 230, 118, 0.35); border: 1px solid #33ff99;
+            transition: all 0.3s ease; width: 100%; max-width: 540px; cursor: pointer;
         }
+        .btn-bridge:hover {
+            transform: translateY(-3px) scale(1.02); box-shadow: 0 18px 40px rgba(0, 230, 118, 0.55); color: #000;
+        }
+        .btn-subtext { font-size: 0.82rem; color: #9ca3af; margin-top: 14px; display: block; }
 
+        /* Lista de Pontos Práticos */
+        .feature-list { list-style: none; margin: 25px 0 35px; display: flex; flex-direction: column; gap: 14px; }
+        .feature-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 1.05rem; color: #d1d5db; }
+        .feature-list li i { color: var(--accent-green); font-size: 1.1rem; margin-top: 4px; flex-shrink: 0; }
+
+        /* Footer Seguro para Google Ads */
         footer {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 13px;
-            color: #6b7280;
-            padding-bottom: 20px;
+            border-top: 1px solid var(--border); padding: 50px 20px 40px; text-align: center;
+            font-size: 0.85rem; color: #6b7280; background: #04060a;
         }
+        .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+        .footer-links a { color: #9ca3af; text-decoration: none; transition: color 0.2s; font-weight: 600; }
+        .footer-links a:hover { color: var(--primary-gold); }
+        .footer-disclaimer { max-width: 760px; margin: 0 auto; line-height: 1.6; }
 
-        footer .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 18px;
-            margin-bottom: 16px;
-        }
-
-        footer a {
-            color: #9ca3af;
-            text-decoration: none;
-            transition: color 0.2s ease;
-            font-size: 13px;
-        }
-
-        footer a:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-
-        footer p {
-            font-size: 12px;
-            color: #4b5563;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 28px 18px;
-                margin-top: 15px;
-            }
-            h1 {
-                font-size: 20px;
-            }
-            .cta-btn {
-                font-size: 15px;
-                padding: 16px 12px;
-            }
-            .features {
-                font-size: 11px;
-                gap: 10px;
-            }
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .article-content p { font-size: 1.02rem; }
+            .preview-card { padding: 30px 18px; }
+            .btn-bridge { font-size: 1.05rem; padding: 18px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <span class="badge">Apresentação Exclusiva</span>
-        
-        <h1>Aprenda a Criar e Editar Vídeos Profissionais Usando Apenas o Seu Celular</h1>
-        
-        <p class="subtitle">
-            Assista à apresentação oficial para entender como funciona o método prático de criação de conteúdo e edição no celular.
-        </p>
-
-        <!-- Link que direciona o usuário para a sua página de vendas principal -->
-        <a href="https://primevisionplay.com.br/adeusclt2.0" class="cta-btn">
-            QUERO ASSISTIR À APRESENTAÇÃO
-        </a>
-
-        <div class="features">
-            <span>✓ Acesso Imediato</span>
-            <span>✓ Método 100% Prático</span>
-            <span>✓ Vídeo Explicativo</span>
+    <!-- Barra Superior Editorial -->
+    <nav class="top-nav">
+        <div class="nav-inner">
+            <div class="logo-editorial">
+                <i class="fa-solid fa-chart-line"></i> TENDÊNCIAS <span>DIGITAIS</span>
+            </div>
+            <div class="badge-editorial">
+                Estudo de Caso Audiovisual
+            </div>
         </div>
-    </div>
+    </nav>
 
+    <!-- Artigo / Pré-Sell -->
+    <main class="article-container">
+        <article class="article-content">
+            
+            <header class="article-header">
+                <span class="category-tag">Criação de Conteúdo & Algoritmos</span>
+                <h1 class="article-title">
+                    O Fenômeno dos Canais Temáticos: Como Criadores Estão Gerando Milhões de Visualizações nas Redes Sem Precisar Gravar o Rosto
+                </h1>
+                
+                <div class="article-meta">
+                    <span><i class="fa-regular fa-clock"></i> Tempo de leitura: 3 minutos</span>
+                    <span>•</span>
+                    <span><i class="fa-solid fa-circle-check" style="color: var(--accent-green);"></i> Atualizado para 2026</span>
+                </div>
+            </header>
+
+            <p>
+                Quem utiliza o <strong>Instagram Reels</strong> ou o <strong>Facebook</strong> certamente já percebeu uma nova tendência dominante no feed: cenas marcantes de filmes, séries e curiosidades do cinema que acumulam centenas de milhares — e muitas vezes milhões — de visualizações em poucos dias.
+            </p>
+
+            <p>
+                O que poucos espectadores sabem é que grande parte desses perfis não pertence a estúdios cinematográficos ou canais de televisão. São administrados por <strong>criadores digitais independentes</strong> que operam essas páginas diretamente de seus celulares, sem nunca terem gravado um único segundo do próprio rosto.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Por que o formato de entretenimento domina o algoritmo?</h4>
+                <p>
+                    O algoritmo das redes sociais premia a <strong>retenção de atenção</strong>. Cenas com alta carga dramática ou suspense mantêm o usuário vidrado até o final, fazendo a própria plataforma entregar o vídeo para dezenas de milhares de novos usuários de forma orgânica.
+                </p>
+            </div>
+
+            <p>
+                No entanto, a grande barreira que muitos encontram ao tentar criar esse tipo de conteúdo por conta própria é a falta de metodologia técnica: vídeos com resolução borrada, marcas d'água de terceiros ou publicações em horários errados que limitam o alcance.
+            </p>
+
+            <p>
+                Recentemente, criadores que superaram a marca de <strong>mais de 40 milhões de visualizações e mais de 100 mil seguidores</strong> documentaram a padronização exata desse processo em uma série de etapas práticas:
+            </p>
+
+            <ul class="feature-list">
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    <span><strong>Diagramação Padronizada:</strong> O enquadramento centralizado no formato 9:16 (CapCut) otimizado especificamente para a tela do smartphone.</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    <span><strong>Ganchos com Inteligência Artificial:</strong> O uso de prompts em IA que geram títulos magnéticos nos primeiros 3 segundos para reter a audiência.</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    <span><strong>Sincronização Híbrida:</strong> Como publicar simultaneamente no Facebook e Instagram multiplicando a distribuição sem trabalho dobrado.</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    <span><strong>Esteira de Parcerias:</strong> Como transformar visualizações orgânicas em recomendações de produtos e monetização sólida.</span>
+                </li>
+            </ul>
+
+            <!-- Box de Conversão (Ponte para a VSL) -->
+            <div class="preview-card">
+                <h3>Apresentação em Vídeo Liberada</h3>
+                <p>
+                    Um passo a passo detalhado demonstrando a tela do celular, o fluxo de edição no CapCut e como estruturar uma página do zero foi disponibilizado em um vídeo prático de 5 minutos.
+                </p>
+                
+                <a href="https://primevisionplay.com.br/adeusclt2.0" class="btn-bridge">
+                    <span>Acessar Apresentação Oficial</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                
+                <span class="btn-subtext">
+                    <i class="fa-solid fa-lock"></i> Acesso direto à página oficial do método.
+                </span>
+            </div>
+
+            <p>
+                Para quem busca entender a engrenagem técnica dos algoritmos audiovisuais modernos, compreender esse fluxo de trabalho representa uma das habilidades de maior demanda na internet hoje.
+            </p>
+
+        </article>
+    </main>
+
+    <!-- Rodapé 100% Compatível com Políticas do Google Ads -->
     <footer>
         <div class="footer-links">
             <a href="https://primevisionplay.com.br/termos-de-uso">Termos de Uso</a>
+            <span>•</span>
             <a href="https://primevisionplay.com.br/politicas-de-privacidade">Políticas de Privacidade</a>
-            <a href="https://primevisionplay.com.br/suporte">Suporte ao Aluno</a>
+            <span>•</span>
+            <a href="https://primevisionplay.com.br/suporte">Contato e Suporte</a>
         </div>
-        <p>&copy; Prime Vision Play. Todos os direitos reservados.</p>
+        <p class="footer-disclaimer">
+            <strong>Aviso de Isenção de Responsabilidade:</strong> Este portal destina-se a estudos de caso informativos sobre marketing audiovisual e criação de conteúdo digital. Os resultados de alcance e audiência variam de acordo com a aplicação prática e dedicação de cada indivíduo. Este site não é afiliado ao Google, Meta (Facebook/Instagram) ou a qualquer plataforma de streaming mencionada. Todos os direitos reservados © 2026.
+        </p>
     </footer>
 
 </body>
