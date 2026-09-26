@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adeus CLT | O Segredo Nuclear dos Perfis Virais e Lucrativos</title>
     <link rel="icon" type="image/png" href="https://primevisionplay.com.br/favicon.jpeg">
-    <meta name="description" content="Aprenda o método secreto para criar perfis virais de filmes e séries no Instagram e Facebook, monetizar com comissões de afiliados e ganhar em dólar sem precisar aparecer.">
+    <meta name="description" content="Aprenda o método secreto para criar perfis virais de filmes e séries no Instagram e Facebook, aplicar a Engenharia Anti-Block e monetizar sem aparecer.">
     <link rel="canonical" href="https://primevisionplay.com.br/adeusclt2.0">
     
     <meta property="og:title" content="Adeus CLT | O Segredo Nuclear dos Perfis Virais e Lucrativos">
-    <meta property="og:description" content="Aprenda o método secreto para criar perfis virais no Instagram e Facebook, monetizar com afiliados e ganhar em dólar sem aparecer.">
+    <meta property="og:description" content="Aprenda a criar perfis virais de filmes e séries no Instagram e Facebook, blindar seus vídeos contra copyright e monetizar sem aparecer.">
     <meta property="og:url" content="https://primevisionplay.com.br/adeusclt2.0">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://primevisionplay.com.br/capa-curso.jpeg">
@@ -72,10 +72,10 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); scroll-behavior: smooth; }
         body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
-        /* Scroll Reveal Animation Classes */
-        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        /* Scroll Reveal Animation Classes (GPU Accelerated) */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: opacity, transform; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+        .delay-1 { transition-delay: 0.08s; } .delay-2 { transition-delay: 0.15s; } .delay-3 { transition-delay: 0.22s; }
 
         /* Top Sticky Announcement Bar */
         .scarcity-bar {
@@ -91,54 +91,56 @@
         @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        section { padding: 90px 0; position: relative; border-bottom: 1px solid rgba(255,255,255,0.02); }
+        section { padding: 85px 0; position: relative; border-bottom: 1px solid rgba(255,255,255,0.02); }
 
         /* Glowing Background Elements */
-        .glow-bg { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255, 184, 0, 0.05) 0%, rgba(0,0,0,0) 70%); top: -200px; left: 50%; transform: translateX(-50%); z-index: -1; pointer-events: none; }
-        .glow-bg-green { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0, 230, 118, 0.04) 0%, rgba(0,0,0,0) 70%); bottom: 0; right: -100px; z-index: -1; pointer-events: none; }
+        .glow-bg { position: absolute; width: 650px; height: 650px; background: radial-gradient(circle, rgba(255, 184, 0, 0.06) 0%, rgba(0,0,0,0) 70%); top: -200px; left: 50%; transform: translateX(-50%); z-index: -1; pointer-events: none; }
+        .glow-bg-green { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0, 230, 118, 0.05) 0%, rgba(0,0,0,0) 70%); bottom: 0; right: -100px; z-index: -1; pointer-events: none; }
 
         /* Hero Section */
-        .hero { padding: 70px 0 60px; text-align: center; position: relative; background: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.03)"/></svg>'); }
+        .hero { padding: 65px 0 55px; text-align: center; position: relative; background: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.03)"/></svg>'); }
         .badge-nuclear {
             display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 184, 0, 0.1); border: 1px solid rgba(255, 184, 0, 0.4);
             color: var(--primary-gold); padding: 8px 22px; border-radius: 50px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase;
-            letter-spacing: 1.5px; margin-bottom: 30px; box-shadow: 0 0 20px rgba(255, 184, 0, 0.15);
+            letter-spacing: 1.5px; margin-bottom: 25px; box-shadow: 0 0 20px rgba(255, 184, 0, 0.15);
         }
-        .headline { font-family: var(--font-heading); font-size: 3.2rem; line-height: 1.15; font-weight: 800; margin-bottom: 25px; letter-spacing: -1px; text-transform: uppercase; }
+        .headline { font-family: var(--font-heading); font-size: 3.1rem; line-height: 1.15; font-weight: 900; margin-bottom: 22px; letter-spacing: -1px; text-transform: uppercase; }
         .headline span.highlight-gold { background: linear-gradient(135deg, #ffd700, #ff9100); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 40px rgba(255, 184, 0, 0.3); }
         .headline span.highlight-green { color: var(--accent-green); text-shadow: 0 0 30px rgba(0, 230, 118, 0.3); }
-        .subheadline { font-size: 1.3rem; color: var(--text-muted); max-width: 900px; margin: 0 auto 40px; font-weight: 400; }
+        .subheadline { font-size: 1.25rem; color: var(--text-muted); max-width: 920px; margin: 0 auto 35px; font-weight: 400; line-height: 1.6; }
         .subheadline strong { color: #ffffff; font-weight: 700; }
 
         /* VSL Video Container */
         .vsl-wrapper {
-            max-width: 860px; margin: 0 auto 45px; background: rgba(255,255,255,0.02); border-radius: 24px;
-            border: 1px solid rgba(255, 184, 0, 0.2); padding: 15px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 184, 0, 0.1);
+            max-width: 860px; margin: 0 auto 40px; background: rgba(255,255,255,0.02); border-radius: 24px;
+            border: 1px solid rgba(255, 184, 0, 0.25); padding: 12px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 184, 0, 0.1);
             position: relative; backdrop-filter: blur(10px);
         }
         .vsl-box { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 16px; overflow: hidden; }
         .vsl-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* Advanced CTA Buttons */
+        /* Advanced CTA Buttons - Ultra Responsive */
         .btn-cta {
             display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
             background: linear-gradient(180deg, #00ff88 0%, #009940 100%); color: #00220a; text-decoration: none;
-            padding: 22px 50px; border-radius: 16px; font-weight: 900; font-size: 1.4rem; text-transform: uppercase;
+            padding: 22px 45px; border-radius: 16px; font-weight: 900; font-size: 1.35rem; text-transform: uppercase;
             letter-spacing: 0.5px; box-shadow: 0 15px 35px var(--accent-green-glow), inset 0 2px 0 rgba(255,255,255,0.5);
-            border: 1px solid #33ff99; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer;
-            width: 100%; max-width: 680px; margin: 0 auto; position: relative; overflow: hidden; animation: pulse 2s infinite;
+            border: 1px solid #33ff99; transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer;
+            width: 100%; max-width: 680px; margin: 0 auto; position: relative; overflow: hidden;
+            transform: translateZ(0); will-change: transform; animation: pulse 2s infinite;
         }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.4); } 70% { box-shadow: 0 0 0 20px rgba(0, 230, 118, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); } }
-        .btn-cta:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 20px 45px rgba(0, 230, 118, 0.6); color: #000; }
-        .btn-cta::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: skewX(-25deg); animation: shineBtn 3s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.4); } 70% { box-shadow: 0 0 0 18px rgba(0, 230, 118, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); } }
+        .btn-cta:hover { transform: translateY(-4px) scale(1.015); box-shadow: 0 20px 45px rgba(0, 230, 118, 0.6); color: #000; }
+        .btn-cta:active { transform: translateY(-1px) scale(0.99); }
+        .btn-cta::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: skewX(-25deg); animation: shineBtn 3.5s infinite; pointer-events: none; }
         @keyframes shineBtn { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
-        .btn-cta small { font-size: 0.85rem; font-weight: 700; opacity: 0.85; text-transform: none; margin-top: 6px; }
+        .btn-cta small { font-size: 0.85rem; font-weight: 700; opacity: 0.9; text-transform: none; margin-top: 6px; }
 
         .cta-subtext { margin-top: 18px; font-size: 0.95rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600; }
         .cta-subtext i { color: var(--accent-green); }
 
         /* Trust Grid */
-        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 60px 0 20px; }
+        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 55px 0 15px; }
         .trust-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 25px; border-radius: 16px; display: flex; align-items: center; gap: 20px; text-align: left; transition: transform 0.3s ease; }
         .trust-card:hover { transform: translateY(-5px); border-color: rgba(255, 184, 0, 0.3); }
         .trust-card i { font-size: 2rem; color: var(--primary-gold); background: rgba(255, 184, 0, 0.08); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 12px; flex-shrink: 0; }
@@ -146,61 +148,92 @@
         .trust-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
 
         /* Common Section Headers */
-        .section-header { text-align: center; max-width: 860px; margin: 0 auto 55px; }
-        .section-tag { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-gold); font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; background: rgba(255,184,0,0.1); padding: 6px 16px; border-radius: 30px; }
-        .section-title { font-family: var(--font-heading); font-size: 2.6rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: #fff; }
-        .section-desc { color: var(--text-muted); font-size: 1.15rem; }
+        .section-header { text-align: center; max-width: 880px; margin: 0 auto 50px; }
+        .section-tag { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-gold); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; background: rgba(255,184,0,0.1); padding: 6px 16px; border-radius: 30px; }
+        .section-title { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 18px; color: #fff; }
+        .section-desc { color: var(--text-muted); font-size: 1.15rem; line-height: 1.6; }
 
-        /* The Problem / CLT vs Freedom Section */
-        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        /* ============================================================
+           SEÇÃO: PAINEL DE RESULTADOS REAIS (8 SMARTPHONES 9:16)
+        ============================================================ */
+        .results-section { background: radial-gradient(circle at 50% 50%, rgba(255, 184, 0, 0.04) 0%, rgba(3, 5, 8, 1) 75%); border-top: 1px solid rgba(255, 184, 0, 0.15); border-bottom: 1px solid rgba(255, 184, 0, 0.15); }
+        .proof-stats-bar { display: flex; justify-content: center; align-items: center; gap: 40px; margin-bottom: 50px; flex-wrap: wrap; }
+        .stat-item { text-align: center; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 184, 0, 0.2); padding: 15px 30px; border-radius: 16px; }
+        .stat-item h3 { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900; color: var(--primary-gold); }
+        .stat-item p { font-size: 0.9rem; color: #d1d5db; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        .phones-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 30px; }
+        
+        /* Realistic Phone Shell (9:16) */
+        .phone-mockup {
+            background: #141720; border: 6px solid #222938; border-radius: 34px; padding: 4px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 20px rgba(255, 184, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; display: flex; flex-direction: column;
+        }
+        .phone-mockup:hover { transform: translateY(-8px) scale(1.02); border-color: rgba(255, 184, 0, 0.5); box-shadow: 0 25px 50px rgba(0,0,0,1), 0 0 30px rgba(255, 184, 0, 0.2); }
+        
+        .phone-screen {
+            width: 100%; aspect-ratio: 9/16; background: #000; border-radius: 26px; overflow: hidden; position: relative;
+            display: flex; align-items: center; justify-content: center;
+        }
+        
+        /* Dynamic Island / Notch */
+        .phone-island {
+            position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 32%; height: 12px;
+            background: #000; border-radius: 20px; z-index: 5; border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .phone-screen img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+            background: #0d121c url('data:image/svg+xml;utf8,<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" fill="rgba(255,255,255,0.15)" font-size="8" text-anchor="middle" dominant-baseline="middle">SUBIR PRINT 9:16</text></svg>') center center no-repeat;
+        }
+
+        .phone-label { padding: 14px 10px 8px; text-align: center; }
+        .phone-label span { display: inline-block; background: rgba(0, 230, 118, 0.1); color: var(--accent-green); border: 1px solid rgba(0, 230, 118, 0.3); font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 4px; }
+        .phone-label p { font-size: 0.85rem; color: #fff; font-weight: 700; line-height: 1.3; }
+
+        /* The Problem Section */
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
         .comp-card { padding: 45px 40px; border-radius: 20px; border: 1px solid var(--border-color); position: relative; overflow: hidden; }
-        .comp-card.bad { background: linear-gradient(180deg, rgba(255, 51, 75, 0.05) 0%, rgba(10, 15, 24, 0) 100%); border-color: rgba(255, 51, 75, 0.2); }
-        .comp-card.good { background: linear-gradient(180deg, rgba(0, 230, 118, 0.05) 0%, rgba(10, 15, 24, 0) 100%); border-color: rgba(0, 230, 118, 0.3); box-shadow: 0 15px 40px rgba(0, 230, 118, 0.05); }
-        .comp-header { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .comp-header h3 { font-size: 1.6rem; font-weight: 800; }
+        .comp-card.bad { background: linear-gradient(180deg, rgba(255, 51, 75, 0.05) 0%, rgba(10, 15, 24, 0) 100%); border-color: rgba(255, 51, 75, 0.25); }
+        .comp-card.good { background: linear-gradient(180deg, rgba(0, 230, 118, 0.05) 0%, rgba(10, 15, 24, 0) 100%); border-color: rgba(0, 230, 118, 0.35); box-shadow: 0 15px 40px rgba(0, 230, 118, 0.05); }
+        .comp-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .comp-header h3 { font-size: 1.5rem; font-weight: 800; }
         .comp-card.bad .comp-header h3 { color: var(--accent-red); }
         .comp-card.good .comp-header h3 { color: var(--accent-green); }
-        .comp-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
-        .comp-list li { display: flex; align-items: flex-start; gap: 15px; font-size: 1.05rem; color: #d1d5db; }
-        .comp-list li i { margin-top: 5px; font-size: 1.2rem; flex-shrink: 0; }
+        .comp-list { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+        .comp-list li { display: flex; align-items: flex-start; gap: 15px; font-size: 1.02rem; color: #d1d5db; }
+        .comp-list li i { margin-top: 5px; font-size: 1.15rem; flex-shrink: 0; }
         .comp-card.bad .comp-list li i { color: var(--accent-red); }
         .comp-card.good .comp-list li i { color: var(--accent-green); }
 
-        /* Para Quem é o Treinamento */
-        .target-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .target-box { background: var(--bg-card); border: 1px solid var(--border-color); padding: 30px; border-radius: 16px; text-align: center; }
-        .target-box i { font-size: 2.5rem; color: var(--primary-gold); margin-bottom: 20px; }
-        .target-box h3 { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
-        .target-box p { color: var(--text-muted); font-size: 0.95rem; }
-
         /* The 4 Nuclear Pillars */
-        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
         .pillar-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 40px 30px; transition: all 0.4s ease; position: relative; overflow: hidden; }
         .pillar-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--primary-gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
         .pillar-card:hover { transform: translateY(-8px); border-color: rgba(255, 184, 0, 0.4); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
         .pillar-card:hover::before { transform: scaleX(1); }
-        .pillar-num { font-size: 3.5rem; font-family: var(--font-heading); font-weight: 900; color: rgba(255, 184, 0, 0.15); line-height: 1; margin-bottom: 20px; }
-        .pillar-card h3 { font-size: 1.35rem; color: #fff; margin-bottom: 15px; font-weight: 800; }
-        .pillar-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
+        .pillar-num { font-size: 3.2rem; font-family: var(--font-heading); font-weight: 900; color: rgba(255, 184, 0, 0.15); line-height: 1; margin-bottom: 18px; }
+        .pillar-card h3 { font-size: 1.3rem; color: #fff; margin-bottom: 14px; font-weight: 800; }
+        .pillar-card p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.6; }
 
         /* Modules Section */
-        .modules-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; }
-        .module-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 35px; transition: all 0.3s ease; position: relative; }
-        .module-box:hover { border-color: rgba(255, 184, 0, 0.3); background: var(--bg-card-hover); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .module-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
-        .module-tag { background: rgba(255, 184, 0, 0.1); color: var(--primary-gold); font-size: 0.85rem; font-weight: 800; padding: 6px 16px; border-radius: 30px; text-transform: uppercase; border: 1px solid rgba(255,184,0,0.2); }
-        .module-status { color: var(--accent-green); font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; gap: 6px; }
-        .module-title { font-size: 1.4rem; color: #fff; margin-bottom: 20px; font-weight: 800; line-height: 1.3; }
-        .lessons-list { list-style: none; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; }
-        .lessons-list li { font-size: 0.98rem; color: #d1d5db; display: flex; align-items: flex-start; gap: 12px; }
-        .lessons-list li i { color: var(--primary-gold); font-size: 0.9rem; margin-top: 6px; }
+        .modules-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 25px; }
+        .module-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 32px; transition: all 0.3s ease; position: relative; }
+        .module-box:hover { border-color: rgba(255, 184, 0, 0.35); background: var(--bg-card-hover); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .module-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .module-tag { background: rgba(255, 184, 0, 0.1); color: var(--primary-gold); font-size: 0.8rem; font-weight: 800; padding: 6px 14px; border-radius: 30px; text-transform: uppercase; border: 1px solid rgba(255,184,0,0.2); }
+        .module-status { color: var(--accent-green); font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+        .module-title { font-size: 1.35rem; color: #fff; margin-bottom: 18px; font-weight: 800; line-height: 1.3; }
+        .lessons-list { list-style: none; display: flex; flex-direction: column; gap: 11px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 18px; }
+        .lessons-list li { font-size: 0.95rem; color: #d1d5db; display: flex; align-items: flex-start; gap: 12px; }
+        .lessons-list li i { color: var(--primary-gold); font-size: 0.85rem; margin-top: 6px; flex-shrink: 0; }
 
         /* Bonuses Section */
-        .bonuses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 30px; }
-        .bonus-card { background: linear-gradient(180deg, #131926 0%, #080b11 100%); border: 1px solid rgba(255, 184, 0, 0.3); border-radius: 20px; padding: 40px 30px; position: relative; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(255,184,0,0.05); }
-        .bonus-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary-gold); color: #000; font-size: 0.8rem; font-weight: 900; padding: 6px 20px; border-radius: 30px; text-transform: uppercase; box-shadow: 0 5px 15px rgba(255,184,0,0.4); white-space: nowrap; }
+        .bonuses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .bonus-card { background: linear-gradient(180deg, #131926 0%, #080b11 100%); border: 1px solid rgba(255, 184, 0, 0.3); border-radius: 20px; padding: 40px 25px 30px; position: relative; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(255,184,0,0.05); }
+        .bonus-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--primary-gold); color: #000; font-size: 0.8rem; font-weight: 900; padding: 5px 18px; border-radius: 30px; text-transform: uppercase; box-shadow: 0 5px 15px rgba(255,184,0,0.4); white-space: nowrap; }
         
-        /* Destaque Exclusivo para o Super Bônus de Influenciadora */
         .bonus-card.bonus-highlight {
             border: 2px solid var(--accent-cyan);
             box-shadow: 0 15px 40px rgba(6, 182, 212, 0.15), 0 0 25px rgba(245, 158, 11, 0.1);
@@ -212,106 +245,100 @@
             box-shadow: 0 5px 15px rgba(6, 182, 212, 0.5);
         }
 
-        .bonus-icon { font-size: 3rem; color: var(--primary-gold); margin: 15px 0 25px; text-align: center; }
+        .bonus-icon { font-size: 2.8rem; color: var(--primary-gold); margin: 10px 0 20px; text-align: center; }
         .bonus-card.bonus-highlight .bonus-icon { color: var(--accent-cyan); }
-        .bonus-card h3 { font-size: 1.3rem; color: #fff; margin-bottom: 15px; font-weight: 800; text-align: center; }
-        .bonus-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; text-align: center; }
-        .bonus-value { border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.95rem; color: var(--text-muted); text-align: center; }
+        .bonus-card h3 { font-size: 1.25rem; color: #fff; margin-bottom: 14px; font-weight: 800; text-align: center; }
+        .bonus-card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; text-align: center; }
+        .bonus-value { border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 16px; font-size: 0.9rem; color: var(--text-muted); text-align: center; }
         .bonus-value del { color: var(--accent-red); font-weight: 700; }
-        .bonus-value span { color: var(--accent-green); font-weight: 900; font-size: 1.1rem; display: block; margin-top: 5px; }
-
-        /* Testimonials */
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .test-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 35px; position: relative; transition: transform 0.3s ease; }
-        .test-card:hover { transform: translateY(-5px); border-color: rgba(255, 184, 0, 0.4); }
-        .test-stars { color: var(--primary-gold); font-size: 1rem; margin-bottom: 15px; }
-        .test-text { color: #e5e7eb; font-size: 1.05rem; line-height: 1.6; margin-bottom: 25px; font-style: italic; }
-        .test-author { display: flex; align-items: center; gap: 15px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; }
-        .test-avatar-img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-gold); box-shadow: 0 0 15px rgba(255, 184, 0, 0.2); flex-shrink: 0; }
-        .test-info h4 { font-size: 1.05rem; color: #fff; font-weight: 800; }
-        .test-info span { font-size: 0.85rem; color: var(--accent-green); display: block; margin-top: 2px; }
+        .bonus-value span { color: var(--accent-green); font-weight: 900; font-size: 1.05rem; display: block; margin-top: 4px; }
 
         /* Offer Section */
-        .offer-section { background: radial-gradient(circle at 50% 50%, rgba(255, 184, 0, 0.08) 0%, rgba(7, 9, 14, 0) 80%); padding: 120px 0; }
-        .pricing-box { max-width: 860px; margin: 0 auto; background: linear-gradient(180deg, #0d121c 0%, #07090e 100%); border: 2px solid var(--primary-gold); border-radius: 24px; padding: 60px 50px; text-align: center; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 184, 0, 0.15); position: relative; }
-        .pricing-ribbon { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, #ff9100, #ffd700); color: #000; padding: 10px 30px; border-radius: 50px; font-weight: 900; font-size: 1rem; text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 10px 25px rgba(255, 184, 0, 0.4); white-space: nowrap; }
-        .price-anchor { font-size: 1.25rem; color: var(--text-muted); margin: 20px 0 10px; font-weight: 600; }
+        .offer-section { background: radial-gradient(circle at 50% 50%, rgba(255, 184, 0, 0.08) 0%, rgba(7, 9, 14, 0) 80%); padding: 110px 0; }
+        .pricing-box { max-width: 860px; margin: 0 auto; background: linear-gradient(180deg, #0d121c 0%, #07090e 100%); border: 2px solid var(--primary-gold); border-radius: 24px; padding: 55px 45px; text-align: center; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 184, 0, 0.15); position: relative; }
+        .pricing-ribbon { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, #ff9100, #ffd700); color: #000; padding: 8px 28px; border-radius: 50px; font-weight: 900; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 10px 25px rgba(255, 184, 0, 0.4); white-space: nowrap; }
+        .price-anchor { font-size: 1.2rem; color: var(--text-muted); margin: 20px 0 10px; font-weight: 600; }
         .price-anchor del { color: var(--accent-red); font-weight: 800; }
-        .price-main { display: flex; align-items: baseline; justify-content: center; gap: 8px; margin-bottom: 15px; }
+        .price-main { display: flex; align-items: baseline; justify-content: center; gap: 8px; margin-bottom: 12px; }
         .price-main .currency { font-size: 2.2rem; font-weight: 800; color: var(--primary-gold); }
         .price-main .amount { font-size: 5.5rem; font-family: var(--font-heading); font-weight: 900; color: #ffffff; line-height: 1; text-shadow: 0 0 30px rgba(255,255,255,0.2); }
         .price-main .period { font-size: 1.2rem; color: var(--accent-green); font-weight: 800; }
-        .vitalicio-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(0, 230, 118, 0.1); border: 1px solid rgba(0, 230, 118, 0.4); color: var(--accent-green); padding: 8px 24px; border-radius: 50px; font-weight: 800; font-size: 1rem; margin-bottom: 40px; }
+        .vitalicio-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(0, 230, 118, 0.1); border: 1px solid rgba(0, 230, 118, 0.4); color: var(--accent-green); padding: 8px 24px; border-radius: 50px; font-weight: 800; font-size: 0.95rem; margin-bottom: 35px; }
         
-        .offer-features { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; text-align: left; margin-bottom: 40px; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 35px 0; }
-        .offer-features li { font-size: 1.05rem; color: #f3f4f6; display: flex; align-items: center; gap: 12px; font-weight: 500; }
-        .offer-features li i { color: var(--accent-green); font-size: 1.2rem; flex-shrink: 0; background: rgba(0,230,118,0.1); padding: 4px; border-radius: 50%; }
+        .offer-features { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; margin-bottom: 35px; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 30px 0; }
+        .offer-features li { font-size: 1rem; color: #f3f4f6; display: flex; align-items: center; gap: 12px; font-weight: 500; }
+        .offer-features li i { color: var(--accent-green); font-size: 1.15rem; flex-shrink: 0; background: rgba(0,230,118,0.1); padding: 4px; border-radius: 50%; }
         .offer-features li.feature-highlight { color: #ffffff; font-weight: 700; }
         .offer-features li.feature-highlight i { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.15); }
 
-        /* Payment Methods Box */
-        .payment-methods-box { margin-top: 30px; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; padding: 15px 25px; background: rgba(255, 255, 255, 0.03); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); }
-        .pix-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(50, 188, 173, 0.15); border: 1px solid rgba(50, 188, 173, 0.4); color: #4ee3d2; padding: 6px 16px; border-radius: 10px; font-weight: 800; font-size: 0.95rem; }
-        .payment-text { color: #9ca3af; font-size: 0.95rem; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; justify-content: center; font-weight: 600; }
-        .payment-text span { display: inline-flex; align-items: center; gap: 6px; }
+        .payment-methods-box { margin-top: 25px; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; padding: 14px 20px; background: rgba(255, 255, 255, 0.03); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .pix-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(50, 188, 173, 0.15); border: 1px solid rgba(50, 188, 173, 0.4); color: #4ee3d2; padding: 6px 14px; border-radius: 10px; font-weight: 800; font-size: 0.9rem; }
+        .payment-text { color: #9ca3af; font-size: 0.9rem; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; font-weight: 600; }
         .payment-text i { color: var(--primary-gold); }
 
         /* Guarantee Section */
-        .guarantee-box { max-width: 860px; margin: 50px auto 0; background: linear-gradient(90deg, var(--bg-card) 0%, rgba(255,184,0,0.05) 100%); border: 1px solid var(--primary-gold); border-radius: 24px; padding: 40px; display: flex; align-items: center; gap: 40px; box-shadow: 0 10px 30px rgba(255,184,0,0.05); }
-        .guarantee-icon { width: 130px; height: 130px; background: rgba(255, 184, 0, 0.1); border: 2px dashed var(--primary-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; color: var(--primary-gold); flex-shrink: 0; position: relative; }
-        .guarantee-icon::after { content: '7 DIAS'; position: absolute; bottom: -10px; background: var(--primary-gold); color: #000; font-size: 0.8rem; font-weight: 900; padding: 4px 12px; border-radius: 20px; }
-        .guarantee-content h3 { font-size: 1.6rem; color: #fff; margin-bottom: 10px; font-weight: 800; }
-        .guarantee-content p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; }
+        .guarantee-box { max-width: 860px; margin: 45px auto 0; background: linear-gradient(90deg, var(--bg-card) 0%, rgba(255,184,0,0.05) 100%); border: 1px solid var(--primary-gold); border-radius: 24px; padding: 35px; display: flex; align-items: center; gap: 35px; box-shadow: 0 10px 30px rgba(255,184,0,0.05); }
+        .guarantee-icon { width: 120px; height: 120px; background: rgba(255, 184, 0, 0.1); border: 2px dashed var(--primary-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3.2rem; color: var(--primary-gold); flex-shrink: 0; position: relative; }
+        .guarantee-icon::after { content: '7 DIAS'; position: absolute; bottom: -8px; background: var(--primary-gold); color: #000; font-size: 0.75rem; font-weight: 900; padding: 4px 10px; border-radius: 20px; }
+        .guarantee-content h3 { font-size: 1.5rem; color: #fff; margin-bottom: 8px; font-weight: 800; }
+        .guarantee-content p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
 
         /* FAQ Accordion */
-        .faq-wrapper { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+        .faq-wrapper { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
         .faq-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all 0.3s ease; }
         .faq-item:hover { border-color: rgba(255,255,255,0.15); }
-        .faq-question { padding: 25px 30px; font-size: 1.15rem; font-weight: 700; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; }
-        .faq-question i { color: var(--primary-gold); transition: transform 0.3s ease; font-size: 1.2rem; }
+        .faq-question { padding: 22px 28px; font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; }
+        .faq-question i { color: var(--primary-gold); transition: transform 0.3s ease; font-size: 1.1rem; }
         .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--accent-green); }
-        .faq-answer { padding: 0 30px; max-height: 0; overflow: hidden; transition: all 0.4s ease; color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; }
-        .faq-item.active .faq-answer { padding: 0 30px 25px; max-height: 400px; }
+        .faq-answer { padding: 0 28px; max-height: 0; overflow: hidden; transition: all 0.4s ease; color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+        .faq-item.active .faq-answer { padding: 0 28px 22px; max-height: 400px; }
 
         /* Footer */
-        footer { background: #020305; border-top: 1px solid rgba(255,255,255,0.06); padding: 60px 0 40px; text-align: center; color: #6b7280; }
-        .footer-logo { font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 20px; font-family: var(--font-heading); }
-        .footer-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 25px; flex-wrap: wrap; }
-        .footer-links a { color: #9ca3af; text-decoration: none; transition: color 0.2s; font-size: 0.95rem; font-weight: 600; }
+        footer { background: #020305; border-top: 1px solid rgba(255,255,255,0.06); padding: 50px 0 35px; text-align: center; color: #6b7280; }
+        .footer-logo { font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 18px; font-family: var(--font-heading); }
+        .footer-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 22px; flex-wrap: wrap; }
+        .footer-links a { color: #9ca3af; text-decoration: none; transition: color 0.2s; font-size: 0.9rem; font-weight: 600; }
         .footer-links a:hover { color: var(--primary-gold); }
-        footer p { margin-bottom: 15px; font-size: 0.9rem; }
+        footer p { margin-bottom: 12px; font-size: 0.85rem; }
 
-        /* Toast Notification Social Proof */
-        .toast-social { position: fixed; bottom: 30px; left: 30px; background: rgba(17, 22, 34, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(0, 230, 118, 0.5); box-shadow: 0 15px 40px rgba(0,0,0,0.8); border-radius: 16px; padding: 15px 20px; display: flex; align-items: center; gap: 15px; z-index: 9999; transform: translateY(150px) scale(0.9); opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 380px; }
+        /* Toast Social Proof */
+        .toast-social { position: fixed; bottom: 25px; left: 25px; background: rgba(17, 22, 34, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(0, 230, 118, 0.5); box-shadow: 0 15px 40px rgba(0,0,0,0.8); border-radius: 16px; padding: 14px 18px; display: flex; align-items: center; gap: 14px; z-index: 9999; transform: translateY(150px) scale(0.9); opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 360px; }
         .toast-social.show { transform: translateY(0) scale(1); opacity: 1; }
-        .toast-icon { width: 45px; height: 45px; background: rgba(0, 230, 118, 0.15); color: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
-        .toast-content h5 { font-size: 0.95rem; color: #fff; font-weight: 800; line-height: 1.3; }
-        .toast-content p { font-size: 0.85rem; color: var(--accent-green); margin: 3px 0 0; display: flex; align-items: center; gap: 5px; font-weight: 600; }
+        .toast-icon { width: 42px; height: 42px; background: rgba(0, 230, 118, 0.15); color: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+        .toast-content h5 { font-size: 0.9rem; color: #fff; font-weight: 800; line-height: 1.3; }
+        .toast-content p { font-size: 0.8rem; color: var(--accent-green); margin: 2px 0 0; display: flex; align-items: center; gap: 5px; font-weight: 600; }
         .toast-time { font-size: 0.75rem; color: #9ca3af; font-weight: 400; }
 
-        /* Botão do WhatsApp Flutuante */
-        .whatsapp-button { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: #ffffff; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2.2rem; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5); z-index: 9999; transition: all 0.3s ease; text-decoration: none; border: 2px solid rgba(255,255,255,0.1); }
-        .whatsapp-button:hover { background-color: #20b858; transform: scale(1.1) rotate(-5deg); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.7); }
+        /* Floating WhatsApp Button */
+        .whatsapp-button { position: fixed; bottom: 25px; right: 25px; background-color: #25d366; color: #ffffff; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5); z-index: 9999; transition: all 0.3s ease; text-decoration: none; border: 2px solid rgba(255,255,255,0.1); }
+        .whatsapp-button:hover { background-color: #20b858; transform: scale(1.08) rotate(-5deg); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.7); }
 
-        /* Mobile Adjustments */
+        /* Mobile & Tablet Adjustments */
+        @media (max-width: 1024px) {
+            .phones-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        }
         @media (max-width: 768px) {
-            .headline { font-size: 2.2rem; } .subheadline { font-size: 1.1rem; }
+            .headline { font-size: 2.1rem; } .subheadline { font-size: 1.05rem; }
             .comparison-grid, .offer-features, .modules-container { grid-template-columns: 1fr; }
+            .phones-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+            .phone-mockup { border-width: 4px; border-radius: 24px; padding: 2px; }
+            .phone-screen { border-radius: 18px; }
+            .phone-island { height: 9px; }
             .price-main .amount { font-size: 3.8rem; }
-            .pricing-box { padding: 40px 25px; }
+            .pricing-box { padding: 40px 20px; }
             .guarantee-box { flex-direction: column; text-align: center; gap: 20px; padding: 30px 20px; }
-            .btn-cta { font-size: 1.15rem; padding: 20px; }
-            .toast-social { left: 15px; bottom: 15px; max-width: calc(100% - 90px); }
-            .whatsapp-button { width: 55px; height: 55px; bottom: 15px; right: 15px; font-size: 1.8rem; }
-            section { padding: 60px 0; }
+            .btn-cta { font-size: 1.15rem; padding: 18px; }
+            .toast-social { left: 12px; bottom: 12px; max-width: calc(100% - 85px); }
+            .whatsapp-button { width: 52px; height: 52px; bottom: 15px; right: 15px; font-size: 1.7rem; }
+            section { padding: 55px 0; }
         }
     </style>
 </head>
 <body>
 
     <div class="scarcity-bar">
-        <span>🔥 LOTE DE LANÇAMENTO COM ACESSO VITALÍCIO LIBERADO:</span>
-        <span>De <del>R$ 197</del> por apenas <strong>R$ 47</strong></span>
+        <span>🔥 LOTE PROMOCIONAL COM ACESSO VITALÍCIO LIBERADO:</span>
+        <span>De <del>R$ 197</del> por apenas <strong>R$ 47 à vista</strong></span>
         <div class="countdown-timer" id="timer">--:--</div>
     </div>
 
@@ -320,15 +347,15 @@
         <div class="container">
             
             <div class="badge-nuclear reveal">
-                <i class="fa-solid fa-atom"></i> O MÉTODO NUCLEAR DOS PERFIS AUTOMÁTICOS
+                <i class="fa-solid fa-atom"></i> O MÉTODO DA ENGENHARIA ANTI-BLOCK NO CAPCUT
             </div>
 
             <h1 class="headline reveal delay-1">
-                O Segredo Nuclear Para Criar <span class="highlight-gold">Páginas Virais de Filmes & Séries</span> e Construir Uma Máquina de Vendas no Instagram e Facebook <span class="highlight-green">Sem Precisar Aparecer</span>
+                Como Criar Páginas Virais de Filmes & Séries com Milhões de Views <span class="highlight-gold">Sem Mostrar o Rosto</span> e <span class="highlight-green">Sem Tomar Bloqueio de Direitos Autorais</span>
             </h1>
 
             <p class="subheadline reveal delay-2">
-                O passo a passo exato para dominar o algoritmo, aplicar a <strong>Engenharia de Edição Anti-Block</strong>, viralizar com cortes hipnóticos e faturar com <strong>comissões de afiliados e pagamentos em dólar</strong> — mesmo começando do zero apenas com o seu celular.
+                O passo a passo exato para dominar o algoritmo da Meta, aplicar a <strong>Engenharia Anti-Block</strong> no CapCut, postar simultaneamente no Instagram e Facebook e construir uma máquina automática de <strong>comissões de afiliados e pagamentos em dólar</strong> — 100% pelo celular.
             </p>
 
             <div class="vsl-wrapper reveal delay-3">
@@ -336,6 +363,7 @@
                     <iframe 
                         src="https://www.youtube.com/embed/I0-CEkzpfvE?rel=0&modestbranding=1" 
                         title="Método Adeus CLT | Vídeo de Apresentação Oficial" 
+                        loading="lazy"
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen>
@@ -346,7 +374,7 @@
             <div class="reveal delay-3">
                 <a href="https://go.perfectpay.com.br/PPU38CQFF50?src=meta_hero&utm_source=facebook&utm_medium=reels" class="btn-cta">
                     <span>SIM! QUERO GARANTIR MINHA VAGA POR R$ 47</span>
-                    <small>⚡ Acesso Vitalício + Todos os Bônus + Garantia Incondicional</small>
+                    <small>⚡ Acesso Vitalício Imediato + Todos os Bônus + Garantia Incondicional</small>
                 </a>
                 
                 <div class="cta-subtext">
@@ -361,163 +389,296 @@
                     <i class="fa-solid fa-eye-slash"></i>
                     <div>
                         <h4>100% Anônimo</h4>
-                        <p>Você não precisa gravar o rosto e nem falar uma única palavra.</p>
+                        <p>Você não precisa gravar o rosto e nem falar uma única palavra nos vídeos.</p>
                     </div>
                 </div>
                 <div class="trust-card">
                     <i class="fa-solid fa-shield-halved"></i>
                     <div>
                         <h4>Escudo Anti-Copyright</h4>
-                        <p>Edição blindada para o algoritmo nunca derrubar seus vídeos.</p>
+                        <p>A fórmula de filtros, espelhamento e enquadramento que cega o robô da Meta.</p>
                     </div>
                 </div>
                 <div class="trust-card">
-                    <i class="fa-solid fa-robot"></i>
+                    <i class="fa-solid fa-mobile-screen-button"></i>
                     <div>
-                        <h4>Coprodução com I.A.</h4>
-                        <p>Prompts de ouro que criam títulos e redações virais em segundos.</p>
+                        <h4>100% no Celular</h4>
+                        <p>Execução completa em menos de 10 minutos pelo app gratuito do CapCut.</p>
                     </div>
                 </div>
                 <div class="trust-card">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <i class="fa-solid fa-arrows-split-up-and-left"></i>
                     <div>
-                        <h4>Influenciadora I.A.</h4>
-                        <p>Comerciais UGC gerados por I.A. para vender produtos físicos.</p>
+                        <h4>Ecosistema Híbrido Meta</h4>
+                        <p>Uma única postagem disparada simultaneamente no Facebook e Instagram.</p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section style="background: rgba(255,255,255,0.01);">
+    <!-- ============================================================
+         SEÇÃO: PAINEL DE RESULTADOS REAIS (8 SMARTPHONES 9:16)
+    ============================================================ -->
+    <section class="results-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">FILTRO DE AUDIÊNCIA</span>
-                <h2 class="section-title">Para quem é o Adeus CLT?</h2>
-                <p class="section-desc">Este não é um método de "ficar rico fácil", é uma engrenagem baseada em algoritmo e inteligência artificial.</p>
+                <span class="section-tag"><i class="fa-solid fa-fire"></i> RESULTADOS REAIS NO CAMPO DE BATALHA</span>
+                <h2 class="section-title">Mais de 40 Milhões de Visualizações e 100 Mil Seguidores Sem Gastar R$ 1 em Anúncios</h2>
+                <p class="section-desc">Aqui não tem teoria de quem nunca viralizou nada na internet. Veja com seus próprios olhos o poder de tração da nossa Engenharia Anti-Block rodando ao vivo nas nossas páginas:</p>
             </div>
 
-            <div class="target-grid">
-                <div class="target-box reveal">
-                    <i class="fa-solid fa-briefcase"></i>
-                    <h3>Trabalhadores CLT Cansados</h3>
-                    <p>Para quem não aguenta mais pegar ônibus lotado, cumprir horário e quer construir uma renda extra escalável nas horas vagas.</p>
+            <div class="proof-stats-bar reveal">
+                <div class="stat-item">
+                    <h3>+40 Milhões</h3>
+                    <p>Visualizações Orgânicas</p>
                 </div>
-                <div class="target-box reveal delay-1">
-                    <i class="fa-solid fa-mobile-screen"></i>
-                    <h3>Iniciantes do Zero</h3>
-                    <p>Para quem só tem um celular com internet e nenhuma experiência prévia com edição de vídeos ou marketing digital.</p>
+                <div class="stat-item">
+                    <h3>+105.000</h3>
+                    <p>Seguidores Somados</p>
                 </div>
-                <div class="target-box reveal delay-2">
-                    <i class="fa-solid fa-user-secret"></i>
-                    <h3>Pessoas Introvertidas</h3>
-                    <p>Para quem tem vergonha de gravar Stories, não quer se expor na internet, mas entende o poder de venda das redes sociais.</p>
+                <div class="stat-item">
+                    <h3>+11.000</h3>
+                    <p>Seguidores em Apenas 24h</p>
+                </div>
+                <div class="stat-item">
+                    <h3>R$ 0,00</h3>
+                    <p>Gasto com Tráfego Pago</p>
                 </div>
             </div>
-            
+
+            <!-- Grade com 8 Mockups de Celular 9:16 -->
+            <div class="phones-grid">
+                
+                <!-- Celular 1 -->
+                <div class="phone-mockup reveal">
+                    <div class="phone-screen">
+                        <div class="phone-island"></div>
+                        <img src="print1.jpg" alt="Print de 20 a 35 Milhões de Visualizações" loading="lazy">
+                    </div>
+                    <div class="phone-label">
+                        <span>Pico de Alcance</span>
+                        <p>35 Milhões de Views em 90 Dias</p>
+                    </div>
+                </div>
+
+                <!-- Celular 2 -->
+                <div class="phone-mockup reveal delay-1">
+                    <div class="phone-screen">
+                        <div class="phone-island"></div>
+                        <img src="print2.jpg" alt="Print de +11 Mil Seguidores em 24h" loading="lazy">
+                    </div>
+                    <div class="phone-label">
+                        <span>Viralização Explosiva</span>
+                        <p>+11.000 Novos Seguidores em 24h</p>
+                    </div>
+                </div>
+
+                <!-- Celular 3 -->
+                <div class="phone-mockup reveal delay-2">
+                    <div class="phone-screen">
+                        <div class="phone-island"></div>
+                        <img src="print3.jpg" alt="Vídeo com 5.4 Milhões de Visualizações" loading="lazy">
+                    </div>
+                    <div class="phone-label">
+                        <span>Engenharia de Corte</span>
+                        <p>Reels Viral com 5.4 Milhões</p>
+                    </div>
+                </div>
+
+                <!-- Celular 4 -->
+                <div class="phone-mockup reveal delay-3">
+                    <div class="phone-screen">
+                        <div class="phone-island"></div>
+                        <img src="print4.jpg" alt="Vídeo com 3.5 Milhões de Visualizações" loading="lazy">
+                    </div>
+                    <div class="phone-label">
+                        <span>Retenção com I.A.</span>
+                        <p>Corte com 3.5 Milhões de Views</p>
+                    </div>
+                </div>
+
+                <!-- Celular 5 -->
+                <div class="phone-mockup reveal">
+                    <div class="phone-screen">
+                        <div class="phone-island"></div>
+                        <img src="print5.jpg" alt="Perfil Instagram Ultrapassando 65k" loading="lazy">
+                    </div>
+                    <div class="phone-label">
+                        <span>Instagram Blindado</span>
+                        <p>Passando de 65.000 Seguidores</p>
+                    </div>
+                </div>
+
+                <!-- Celular 6 -->
+                <div class="phone-mockup reveal delay-1">
+                    <div class="phone-screen">
+                        <div class="phone-island"></div>
+                        <img src="print6.jpg" alt="Página Facebook Batendo 40k" loading="lazy">
+                    </div>
+                    <div class="phone-label">
+                        <span>Facebook Lucrativo</span>
+                        <p>Página Batendo 40.000 Seguidores</p>
+                    </div>
+                </div>
+
+                <!-- Celular 7 -->
+                <div class="phone-mockup reveal delay-2">
+                    <div class="phone-screen">
+                        <div class="phone-island"></div>
+                        <img src="print7.jpg" alt="Painel de Insights de Engajamento Brutal" loading="lazy">
+                    </div>
+                    <div class="phone-label">
+                        <span>Zero Gastos</span>
+                        <p>100% dos Resultados no Orgânico</p>
+                    </div>
+                </div>
+
+                <!-- Celular 8 -->
+                <div class="phone-mockup reveal delay-3">
+                    <div class="phone-screen">
+                        <div class="phone-island"></div>
+                        <img src="print8.jpg" alt="Página Pronta para Monetização" loading="lazy">
+                    </div>
+                    <div class="phone-label">
+                        <span>Máquina Automática</span>
+                        <p>Ativos Ativos Rodando 24 Horas</p>
+                    </div>
+                </div>
+
+            </div>
+
             <div style="text-align: center; margin-top: 50px;" class="reveal">
-                <a href="https://go.perfectpay.com.br/PPU38CQFF50?src=meta_filtro&utm_source=facebook&utm_medium=reels" class="btn-cta" style="max-width: 500px; padding: 18px 30px; font-size: 1.1rem;">
-                    <span>SOU EU! QUERO COMEÇAR AGORA</span>
+                <a href="https://go.perfectpay.com.br/PPU38CQFF50?src=meta_prints&utm_source=facebook&utm_medium=reels" class="btn-cta" style="max-width: 580px; padding: 18px 30px; font-size: 1.15rem;">
+                    <span>QUERO APRENDER A CONSTRUIR ESSES RESULTADOS</span>
+                    <small>⚡ Treinamento Clique a Clique por Apenas R$ 47</small>
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- O Grande Confronto: Amadores vs. Adeus CLT -->
     <section>
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">A GRANDE VIRADA DE CHAVE</span>
-                <h2 class="section-title">Por Que Continuar Preso à Rotina se Você Pode Ter Perfis Trabalhando 24h Por Você?</h2>
-                <p class="section-desc">Enquanto a maioria das pessoas passa 8 horas por dia pegando trânsito para enriquecer o chefe, os novos criadores digitais usam a internet como uma esteira automática de lucro.</p>
+                <span class="section-tag">A DIFERENÇA ENTRE O FRACASSO E A ESCALA</span>
+                <h2 class="section-title">Por Que 99% das Pessoas que Tentam Criar Páginas de Filmes Têm Seus Vídeos Bloqueados?</h2>
+                <p class="section-desc">Criar páginas de cinema sem uma metodologia técnica é o caminho mais rápido para tomar bloqueios de direitos autorais ou ficar preso a vídeos com 200 visualizações.</p>
             </div>
 
             <div class="comparison-grid">
                 <div class="comp-card bad reveal">
                     <div class="comp-header">
                         <i class="fa-solid fa-circle-xmark" style="color: var(--accent-red); font-size: 2.2rem;"></i>
-                        <h3>A Prisão da Rotina Tradicional</h3>
+                        <h3>A Tentativa Amadora (Bloqueio Certo)</h3>
                     </div>
                     <ul class="comp-list">
-                        <li><i class="fa-solid fa-xmark"></i> Acordar cedo, pegar condução lotada e cumprir 44 horas semanais exaustivas.</li>
-                        <li><i class="fa-solid fa-xmark"></i> Salário fixo que mal sobra no final do mês e sem nenhuma perspectiva de escala.</li>
-                        <li><i class="fa-solid fa-xmark"></i> Medo constante de demissão e dependência total de uma única fonte de renda.</li>
-                        <li><i class="fa-solid fa-xmark"></i> Perder tempo precioso com a família e viver cansado aos finais de semana.</li>
+                        <li><i class="fa-solid fa-xmark"></i> <strong>Vídeos Sujos com Marca d'Água:</strong> Baixam cortes com logos de outros perfis e qualidade comprimida que o algoritmo rebaixa na hora.</li>
+                        <li><i class="fa-solid fa-xmark"></i> <strong>Cortes Sem Engenharia Anti-Block:</strong> Publicam a cena crua sem o enquadramento de segurança, espelhamento e filtros de descaracterização (strike em 24h).</li>
+                        <li><i class="fa-solid fa-xmark"></i> <strong>Canibalização de Postagens:</strong> Postam em horários errados e com frequência atropelada, matando o alcance dos vídeos que começavam a viralizar.</li>
+                        <li><i class="fa-solid fa-xmark"></i> <strong>Zero Estratégia de Monetização:</strong> Acumulam visualizações vazias sem colocar um único centavo no bolso porque não sabem criar esteiras de vendas.</li>
                     </ul>
                 </div>
 
                 <div class="comp-card good reveal delay-1">
                     <div class="comp-header">
                         <i class="fa-solid fa-circle-check" style="color: var(--accent-green); font-size: 2.2rem;"></i>
-                        <h3>O Método Adeus CLT de Páginas Virais</h3>
+                        <h3>A Engenharia Híbrida Adeus CLT</h3>
                     </div>
                     <ul class="comp-list">
-                        <li><i class="fa-solid fa-check"></i> Criação de vídeos em 5 a 10 minutos diretamente pelo celular ou PC.</li>
-                        <li><i class="fa-solid fa-check"></i> Alcance orgânico brutal de milhões de visualizações sem gastar R$ 1 em anúncios.</li>
-                        <li><i class="fa-solid fa-check"></i> Várias fontes de receita caindo no automático (Shopee, Amazon, Infoprodutos e Dólar).</li>
-                        <li><i class="fa-solid fa-check"></i> Liberdade geográfica e de tempo para trabalhar de onde e quando quiser.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Garimpagem de Cenas em Alta Definição:</strong> Treinamento do próprio algoritmo para minerar apenas cenas limpas e com alto poder hipnótico.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>O Escudo Anti-Block no CapCut:</strong> Diagramação 9:16 milimétrica, filtros invisíveis e áudios liberados que deixam o conteúdo 100% indetectável pela Meta.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Ecosistema Híbrido Meta:</strong> Um único corte publicado no celular que roda simultaneamente no Facebook e Instagram multiplicando o alcance por dois.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Máquina de Monetização Multi-Canais:</strong> Ativos prontos para faturar com comissões de produtos físicos (Shopee/Amazon), afiliação exclusiva de 50% e dólar.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Os 4 Pilares Nucleares -->
     <section style="background: rgba(255,255,255,0.01);">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">A FÓRMULA PASSO A PASSO</span>
+                <span class="section-tag">A LINHA DE PRODUÇÃO VIRAL</span>
                 <h2 class="section-title">Os 4 Pilares Nucleares do Treinamento</h2>
-                <p class="section-desc">Um sistema linear, simples e validado na prática para você sair do zero e ter sua estrutura profissional rodando ainda hoje.</p>
+                <p class="section-desc">Um sistema linear, simples e executável em menos de 10 minutos por dia diretamente pelo seu celular.</p>
             </div>
 
             <div class="pillars-grid">
                 <div class="pillar-card reveal">
                     <div class="pillar-num">01</div>
                     <h3>Treinando o Algoritmo (Garimpagem)</h3>
-                    <p>O segredo para forçar o Instagram a te entregar apenas as cenas mais hipnóticas do mundo e como baixar tudo em alta resolução limpo e sem marcas.</p>
+                    <p>O segredo para forçar as redes a te entregarem apenas as cenas mais viciantes do cinema mundial e como extrair tudo limpo em máxima resolução.</p>
                 </div>
 
                 <div class="pillar-card reveal delay-1">
                     <div class="pillar-num">02</div>
                     <h3>I.A. & Redação Viral de Ouro</h3>
-                    <p>Você vai receber o Prompt Secreto para ChatGPT que cria os ganchos mais curiosos, os títulos magnéticos de topo e a legenda que força comentários.</p>
+                    <p>O comando pré-programado para ChatGPT que cospe os ganchos mais curiosos, os títulos magnéticos de topo e a legenda que obriga as pessoas a comentarem.</p>
                 </div>
 
                 <div class="pillar-card reveal delay-2">
                     <div class="pillar-num">03</div>
                     <h3>Edição Anti-Block & Diagramação</h3>
-                    <p>O formato exato de Story/Reels no CapCut (celular e PC): enquadramento central, espelhamento, ajustes de nitidez, áudios liberados e legendas automáticas.</p>
+                    <p>O enquadramento Story 9:16 exato no CapCut: espelhamento, ajustes de nitidez, remoção do encerramento e legendas magnéticas sincronizadas.</p>
                 </div>
 
                 <div class="pillar-card reveal delay-3">
                     <div class="pillar-num">04</div>
                     <h3>Monetização Multi-Canais</h3>
-                    <p>Como transformar visualizações em dinheiro no bolso com afiliação exclusiva de 50%, produtos físicos, infoprodutos e monetização em dólar no Facebook.</p>
+                    <p>Como transformar milhões de visualizações em lucro diário com links de afiliados, venda de produtos físicos, infoprodutos e pagamentos em dólar.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Grade Completa da Perfect Academy -->
     <section>
         <div class="glow-bg-green"></div>
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">O QUE VOCÊ VAI APRENDER</span>
+                <span class="section-tag">CONTEÚDO CLIQUE A CLIQUE</span>
                 <h2 class="section-title">Grade Completa do Treinamento Adeus CLT</h2>
-                <p class="section-desc">Aulas curtas, práticas (de 3 a 8 minutos) e 100% direto ao ponto. Sem enrolação teórica, apenas clique a clique.</p>
+                <p class="section-desc">Aulas práticas de 3 a 7 minutos dentro da plataforma. Sem enrolação teórica, apenas a tela do celular ou computador mostrando onde clicar.</p>
             </div>
 
             <div class="modules-container">
                 
                 <div class="module-box reveal">
                     <div class="module-top">
-                        <span class="module-tag">Módulos 01 ao 03</span>
+                        <span class="module-tag">Módulo 01</span>
                         <span class="module-status"><i class="fa-solid fa-unlock-keyhole"></i> Liberado</span>
                     </div>
-                    <h3 class="module-title">A Fundação de Elite & Construção da Marca</h3>
+                    <h3 class="module-title">A Virada de Chave (Boas-Vindas & Estratégia)</h3>
                     <ul class="lessons-list">
-                        <li><i class="fa-solid fa-play"></i> Criação da identidade visual e logotipo sem fundo (PNG) no padrão profissional.</li>
-                        <li><i class="fa-solid fa-play"></i> Estruturação da Página no Facebook e configuração da Bio Viral padronizada.</li>
-                        <li><i class="fa-solid fa-play"></i> Criação e sincronização do perfil profissional no Instagram para postagem simultânea.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 1.1: Boas-vindas ao Método Cinema Lucrativo e alinhamento de expectativas.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 1.2: A Estrutura do Ecosistema Híbrido: Como Instagram e Facebook vão trabalhar juntos.</li>
+                    </ul>
+                </div>
+
+                <div class="module-box reveal delay-1">
+                    <div class="module-top">
+                        <span class="module-tag">Módulo 02</span>
+                        <span class="module-status"><i class="fa-solid fa-unlock-keyhole"></i> Liberado</span>
+                    </div>
+                    <h3 class="module-title">Construindo a Marca com I.A. em Minutos</h3>
+                    <ul class="lessons-list">
+                        <li><i class="fa-solid fa-play"></i> Aula 2.1: Gerando Nome e Logo Profissional (PNG sem fundo) com Inteligência Artificial sem gastar nada.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 2.2: Criando a Bio Viral padronizada e magnética para conversão.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 2.3: O Elo de Ligação: Conectando Instagram e Facebook para postagens simultâneas.</li>
+                    </ul>
+                </div>
+
+                <div class="module-box reveal">
+                    <div class="module-top">
+                        <span class="module-tag">Módulo 03</span>
+                        <span class="module-status"><i class="fa-solid fa-shield-halved"></i> Blindagem</span>
+                    </div>
+                    <h3 class="module-title">Construindo a Base – A Página Impecável</h3>
+                    <ul class="lessons-list">
+                        <li><i class="fa-solid fa-play"></i> Aula 3.1: Criando a Estrutura do Zero no Facebook com configurações profissionais.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 3.2: As Configurações Ocultas de Blindagem para proteger a página contra bloqueios prematuros.</li>
                     </ul>
                 </div>
 
@@ -528,8 +689,9 @@
                     </div>
                     <h3 class="module-title">A Garimpagem de Ouro – Rastreando Cenas Virais</h3>
                     <ul class="lessons-list">
-                        <li><i class="fa-solid fa-play"></i> Aula Mestre: Treinando o Algoritmo de Busca para transformar seu feed em uma mina de ouro.</li>
-                        <li><i class="fa-solid fa-play"></i> Como extrair vídeos brutos em máxima definição sem marca d'água de outros perfis.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 4.1: Treinando o Monstro: Como forçar o algoritmo a te entregar apenas cenas hipnóticas em alta resolução.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 4.2: Operação Instagram: Estruturando um perfil magnético e intocável.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 4.3: O Efeito Multiplicador: Sincronizando Facebook e Instagram.</li>
                     </ul>
                 </div>
 
@@ -538,25 +700,26 @@
                         <span class="module-tag">Módulo 05</span>
                         <span class="module-status" style="color: var(--primary-gold);"><i class="fa-solid fa-crown"></i> Especial I.A.</span>
                     </div>
-                    <h3 class="module-title">Coprodução com I.A. – O Arsenal da Redação Viral</h3>
+                    <h3 class="module-title">Coprodução com I.A. – Redação & Títulos Magnéticos</h3>
                     <ul class="lessons-list">
-                        <li><i class="fa-solid fa-play"></i> O Prompt de Ouro no ChatGPT: Gerando título hipnótico + legenda viral completa em 5 segundos.</li>
-                        <li><i class="fa-solid fa-play"></i> Engenharia de Ganchos: Como reter a audiência até o final e multiplicar comentários.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 5.1: O Prompt de Ouro no ChatGPT: Título hipnótico + legenda viral completa em 5 segundos.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 5.2: Estrutura de Engajamento: Ganchos e o momento exato da revelação do filme.</li>
                     </ul>
                 </div>
 
                 <div class="module-box reveal delay-1">
                     <div class="module-top">
                         <span class="module-tag">Módulo 06</span>
-                        <span class="module-status"><i class="fa-solid fa-shield-halved"></i> Engenharia</span>
+                        <span class="module-status"><i class="fa-solid fa-film"></i> Engenharia</span>
                     </div>
                     <h3 class="module-title">A Engenharia da Edição Anti-Copyright (CapCut)</h3>
                     <ul class="lessons-list">
-                        <li><i class="fa-solid fa-play"></i> Diagramação de Elite: Enquadramento Story 9:16 com cena centralizada e faixas pretas.</li>
-                        <li><i class="fa-solid fa-play"></i> Aplicação do Título Magnético e posicionamento da Logomarca sem fundo.</li>
-                        <li><i class="fa-solid fa-play"></i> O Escudo Anti-Block: Espelhamento, filtros, remoção do encerramento e áudios seguros.</li>
-                        <li><i class="fa-solid fa-play"></i> Legendas Magnéticas Automatizadas e Exportação Ultra-HD (1080p 60fps).</li>
-                        <li><i class="fa-solid fa-play"></i> [Fluxo Desktop] Edição acelerada no CapCut para Computador.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 6.1: O Filtro de Elite: Enquadramento Story 9:16 e limpeza de imagem.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 6.2: O Escudo Anti-Block e Filtros de Reutilização (espelhamento e filtros).</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 6.3: Posicionamento do Título Magnético e aplicação da Marca d'Água sem fundo.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 6.4: Exportação Ultra-HD (1080p 60fps) com nitidez máxima.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 6.5: Legendas Magnéticas Automatizadas com estilo profissional.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 6.6: [Fluxo Rápido no PC] Edição acelerada no CapCut Desktop.</li>
                     </ul>
                 </div>
 
@@ -567,9 +730,9 @@
                     </div>
                     <h3 class="module-title">A Rotina Viral & O Escudo Anti-Canibalização</h3>
                     <ul class="lessons-list">
-                        <li><i class="fa-solid fa-play"></i> Publicação de Alta Conversão no Reels com disparo simultâneo no Facebook.</li>
-                        <li><i class="fa-solid fa-play"></i> O Mapa dos Melhores Horários e frequência diária de postagens.</li>
-                        <li><i class="fa-solid fa-play"></i> A Regra de Ouro Anti-Canibalização: Como surfar o pico sem matar o alcance.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 7.1: Publicação de Alta Conversão no Reels com disparo automático no Facebook.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 7.2: O Mapa dos Melhores Horários e frequência ideal diária.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 7.3: A Regra de Ouro Anti-Canibalização: Como surfar o pico sem matar o alcance.</li>
                     </ul>
                 </div>
 
@@ -580,12 +743,13 @@
                     </div>
                     <h3 class="module-title">A Máquina de Monetização Multi-Canais</h3>
                     <ul class="lessons-list">
-                        <li><i class="fa-solid fa-play"></i> Programa de Afiliado Exclusivo Adeus CLT com 50% de Comissão por venda.</li>
-                        <li><i class="fa-solid fa-play"></i> Estratégia de Vendas de Produtos Físicos (Shopee, Amazon, Mercado Livre e Magalu).</li>
-                        <li><i class="fa-solid fa-play"></i> <strong>[NOVA AULA]</strong> Criação de Influenciadora com I.A. (Google OmniFlash & UGC Viral).</li>
-                        <li><i class="fa-solid fa-play"></i> Monetização com Infoprodutos e PLRs de alta conversão.</li>
-                        <li><i class="fa-solid fa-play"></i> Monetização Nativa de Conteúdo do Facebook (Ganhos em Dólar).</li>
-                        <li><i class="fa-solid fa-play"></i> Ativação de Assinaturas, Membros e Estrelas na Meta.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 8.1: Panorama Geral da Monetização de Páginas.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 8.2: Afiliado Exclusivo Adeus CLT com 50% de Comissão direta por venda.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 8.3: Venda de Produtos Físicos (Shopee, Amazon, Mercado Livre e Magalu).</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 8.4: [BÔNUS EXCLUSIVO] Criação de Influenciadora com I.A. para UGC Viral.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 8.5: Monetização com Infoprodutos e PLRs de alta procura.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 8.6: Monetização de Conteúdo do Facebook (Ganhos Nativos em Dólar).</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 8.7: Ferramentas Extras da Meta: Assinaturas e Estrelas.</li>
                     </ul>
                 </div>
 
@@ -594,68 +758,64 @@
                         <span class="module-tag">Módulo 09</span>
                         <span class="module-status"><i class="fa-solid fa-rocket"></i> Multiplicação</span>
                     </div>
-                    <h3 class="module-title">Escala, Multiplicação & Império de Páginas</h3>
+                    <h3 class="module-title">Escala, Multiplicação & Próximos Passos</h3>
                     <ul class="lessons-list">
-                        <li><i class="fa-solid fa-play"></i> Expansão Inteligente para TikTok e Kwai sem trabalho extra.</li>
-                        <li><i class="fa-solid fa-play"></i> Criando e gerenciando múltiplas páginas em nichos lucrativos.</li>
-                        <li><i class="fa-solid fa-play"></i> O Plano de Voo: A rotina diária do criador lucrativo.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 9.1: Expansão Inteligente para TikTok e Kwai sem trabalho extra.</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 9.2: Multiplicação da Estrutura (Novas Páginas e Novos Nichos).</li>
+                        <li><i class="fa-solid fa-play"></i> Aula 9.3: O Plano de Voo: A Rotina Diária do Criador Lucrativo.</li>
                     </ul>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 60px;" class="reveal">
+            <div style="text-align: center; margin-top: 55px;" class="reveal">
                 <a href="https://go.perfectpay.com.br/PPU38CQFF50?src=meta_modulos&utm_source=facebook&utm_medium=reels" class="btn-cta">
-                    <span>QUERO ACESSO A TODOS OS MÓDULOS</span>
+                    <span>QUERO ACESSO COMPLETO A TODOS OS MÓDULOS</span>
                     <small>⚡ Liberação Imediata na Área de Membros</small>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Bônus com o Super Bônus de Influenciadora -->
+    <!-- Seção de Bônus -->
     <section style="background: rgba(255, 184, 0, 0.02); border-top: 1px solid rgba(255,184,0,0.1);">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">PRESENTES DE LANÇAMENTO</span>
-                <h2 class="section-title">Bônus Exclusivos de Elite Liberados Hoje</h2>
-                <p class="section-desc">Entrando nesta turma especial de lançamento, você leva gratuitamente todo esse arsenal de aceleração que sozinho custaria mais de R$ 400:</p>
+                <span class="section-tag">PRESENTES DESTA TURMA</span>
+                <h2 class="section-title">Bônus Exclusivos Liberados Gratuitamente Hoje</h2>
+                <p class="section-desc">Ao garantir seu acesso hoje por R$ 47, você leva gratuitamente todo esse arsenal de aceleração que sozinho custaria mais de R$ 400:</p>
             </div>
 
             <div class="bonuses-grid">
                 
-                <!-- Bônus 1: O Prompt de Ouro -->
                 <div class="bonus-card reveal">
                     <span class="bonus-badge">Bônus #1</span>
                     <div class="bonus-icon"><i class="fa-solid fa-file-code"></i></div>
                     <h3>O Prompt de Ouro para ChatGPT</h3>
-                    <p>O comando exato e pré-programado para gerar títulos de alto impacto e redações virais perfeitas para cada cena com apenas 1 clique.</p>
+                    <p>O comando pré-programado que escreve títulos hipnóticos de topo de vídeo e legendas de alta retenção com apenas um clique.</p>
                     <div class="bonus-value">Valor Real: <del>R$ 97,00</del> <span>HOJE: GRÁTIS</span></div>
                 </div>
 
-                <!-- Bônus 2: Afiliação VIP -->
                 <div class="bonus-card reveal delay-1">
                     <span class="bonus-badge">Bônus #2</span>
                     <div class="bonus-icon"><i class="fa-solid fa-handshake-angle"></i></div>
                     <h3>Afiliação VIP com 50% de Comissão</h3>
-                    <p>Direito exclusivo de se afiliar ao Adeus CLT e lucrar metade de cada venda indicando o treinamento diretamente nos seus Stories e Bio.</p>
+                    <p>Direito de comercializar o Adeus CLT nas suas próprias páginas e embolsar metade de cada venda caindo na sua conta.</p>
                     <div class="bonus-value">Valor Real: <del>Inestimável</del> <span>HOJE: LIBERADO</span></div>
                 </div>
 
-                <!-- Bônus 3: Checklist Anti-Block -->
                 <div class="bonus-card reveal delay-2">
                     <span class="bonus-badge">Bônus #3</span>
                     <div class="bonus-icon"><i class="fa-solid fa-shield-virus"></i></div>
                     <h3>Checklist do Escudo Anti-Block</h3>
-                    <p>Guia rápido de verificação para garantir que suas edições passem 100% ilesas pelos filtros rigorosos de direitos autorais das redes sociais.</p>
+                    <p>O passo a passo rápido de checagem pré-postagem para garantir que o vídeo passe 100% blindado pelo robô da Meta.</p>
                     <div class="bonus-value">Valor Real: <del>R$ 67,00</del> <span>HOJE: GRÁTIS</span></div>
                 </div>
 
-                <!-- SUPER BÔNUS VIP: A MÁQUINA DE INFLUENCIADORAS COM I.A. -->
                 <div class="bonus-card bonus-highlight reveal delay-3">
                     <span class="bonus-badge">SUPER BÔNUS VIP</span>
                     <div class="bonus-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                     <h3>Fábrica de Influenciadoras com I.A.</h3>
-                    <p>O método completo para criar comerciais UGC de 20s com influenciadoras virtuais realistas no Google OmniFlash (lip-sync nativo em português) para vender qualquer produto físico sem comprar estoque e sem mostrar o rosto.</p>
+                    <p>A aula secreta para criar comerciais com influenciadoras virtuais ultra-realistas com voz e lip-sync em português para vender produtos físicos sem estoque.</p>
                     <div class="bonus-value">Valor Real: <del>R$ 147,00</del> <span>HOJE: 100% GRÁTIS</span></div>
                 </div>
 
@@ -663,54 +823,7 @@
         </div>
     </section>
 
-    <section>
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">QUEM APLICA O MÉTODO APROVA</span>
-                <h2 class="section-title">Resultados Reais no Campo de Batalha</h2>
-                <p class="section-desc">Veja o que os membros estão falando sobre a facilidade prática de criar vídeos em minutos e gerar renda orgânica:</p>
-            </div>
-
-            <div class="testimonials-grid">
-                <div class="test-card reveal">
-                    <div class="test-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="test-text">"Em menos de 1 semana aplicando a edição anti-block e o prompt do ChatGPT, meu terceiro vídeo bateu 420 mil visualizações no Reels! Já fiz minhas primeiras vendas de afiliado da Shopee na bio."</p>
-                    <div class="test-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80" alt="Matheus Ribeiro" class="test-avatar-img">
-                        <div class="test-info">
-                            <h4>Matheus Ribeiro</h4>
-                            <span>Aluno Adeus CLT • São Paulo - SP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="test-card reveal delay-1">
-                    <div class="test-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="test-text">"O que eu mais gostei é que as aulas são curtas e sem enrolação. Em 1 tarde eu montei a página no Facebook, criei o Instagram profissional e já deixei 5 vídeos agendados. Valeu cada centavo!"</p>
-                    <div class="test-author">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&h=200&q=80" alt="Camila Silveira" class="test-avatar-img">
-                        <div class="test-info">
-                            <h4>Camila Silveira</h4>
-                            <span>Aluna Adeus CLT • Belo Horizonte - MG</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="test-card reveal delay-2">
-                    <div class="test-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="test-text">"Eu não entendia nada de edição. O passo a passo no CapCut mostrando onde cortar, o espelhamento e as legendas automáticas facilitou tudo. Nem precisei ligar o computador, fiz tudo pelo celular."</p>
-                    <div class="test-author">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=80" alt="Lucas Ferreira" class="test-avatar-img">
-                        <div class="test-info">
-                            <h4>Lucas Ferreira</h4>
-                            <span>Aluno Adeus CLT • Rio de Janeiro - RJ</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Seção de Oferta / Checkout -->
     <section class="offer-section" id="checkout">
         <div class="container">
             
@@ -718,7 +831,7 @@
                 <div class="pricing-ribbon">🔥 OFERTA ESPECIAL DE LANÇAMENTO</div>
 
                 <h3 style="font-size: 2rem; font-weight: 900; color: #fff; margin-top: 15px; text-transform: uppercase;">MÉTODO COMPLETO ADEUS CLT</h3>
-                <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 5px;">Acesso Imediato + Todas as Atualizações Futuras</p>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 5px;">Acesso Vitalício Imediato + Todas as Aulas e Bônus</p>
 
                 <div class="price-anchor">
                     De <del>R$ 197,00</del> por apenas:
@@ -735,19 +848,19 @@
                 </div>
 
                 <ul class="offer-features">
-                    <li><i class="fa-solid fa-check"></i> Treinamento Completo em Vídeo HD</li>
-                    <li><i class="fa-solid fa-check"></i> Método de Edição Anti-Copyright (CapCut)</li>
+                    <li><i class="fa-solid fa-check"></i> 9 Módulos Completos em Vídeo HD</li>
+                    <li><i class="fa-solid fa-check"></i> A Engenharia de Edição Anti-Block (CapCut)</li>
                     <li><i class="fa-solid fa-check"></i> O Prompt de Ouro para ChatGPT</li>
-                    <li class="feature-highlight"><i class="fa-solid fa-wand-magic-sparkles"></i> <strong>BÔNUS VIP:</strong> Influenciadora com I.A. (OmniFlash)</li>
-                    <li><i class="fa-solid fa-check"></i> Checklist do Escudo Anti-Block</li>
+                    <li class="feature-highlight"><i class="fa-solid fa-wand-magic-sparkles"></i> <strong>SUPER BÔNUS:</strong> Influenciadora com I.A. (UGC)</li>
+                    <li><i class="fa-solid fa-check"></i> Checklist do Escudo Anti-Block em PDF</li>
                     <li><i class="fa-solid fa-check"></i> Afiliação Exclusiva com 50% de Comissão</li>
                     <li><i class="fa-solid fa-check"></i> Esteira de Monetização em Dólar e Reais</li>
-                    <li><i class="fa-solid fa-check"></i> Garantia Total Blindada de 7 Dias</li>
+                    <li><i class="fa-solid fa-check"></i> Garantia Incondicional de 7 Dias</li>
                 </ul>
 
                 <a href="https://go.perfectpay.com.br/PPU38CQFF50?src=meta_oferta&utm_source=facebook&utm_medium=reels" class="btn-cta">
                     <span>QUERO MEU ACESSO VITALÍCIO POR R$ 47</span>
-                    <small>🔒 Compra 100% Segura • Liberação Imediata</small>
+                    <small>🔒 Compra 100% Segura • Liberação Imediata na PerfectPay</small>
                 </a>
 
                 <div class="payment-methods-box">
@@ -767,7 +880,7 @@
                 </div>
 
                 <p style="color: var(--accent-red); font-size: 0.9rem; font-weight: 700; margin-top: 25px;">
-                    ⚠️ Atenção: Quando o cronômetro zerar ou o lote se encerrar, o valor subirá automaticamente para R$ 197,00.
+                    ⚠️ Atenção: Quando o lote promocional se encerrar, o valor subirá automaticamente para R$ 197,00.
                 </p>
             </div>
 
@@ -784,6 +897,7 @@
         </div>
     </section>
 
+    <!-- FAQ -->
     <section>
         <div class="container">
             <div class="section-header reveal">
@@ -799,17 +913,17 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutamente NÃO! O método Adeus CLT foi 100% estruturado para canais e páginas anônimas (Dark Channels). Você utiliza cortes de filmes, séries e curiosidades sem precisar colocar o rosto ou falar. E agora, com nosso bônus de I.A., você cria comerciais com influenciadoras virtuais sem gastar R$ 1 em produtos e sem se expor.</p>
+                        <p>Absolutamente NÃO! O método Adeus CLT foi 100% estruturado para perfis e canais anônimos. Você utiliza cenas de filmes, séries e curiosidades sem precisar colocar o rosto ou falar. E no módulo de I.A., você cria comerciais com influenciadoras virtuais sem se expor.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Vou ter que pagar caro para usar essas ferramentas de Inteligência Artificial?</span>
+                        <span>Realmente não toma bloqueio por direitos autorais?</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Não! Ensinamos você a usar as ferramentas gratuitas e mostramos o passo a passo exato para aproveitar as brechas promocionais (como o Google One por R$ 10 ou teste grátis de 30 dias), gerando dezenas de comerciais em vídeo a custo praticamente zero.</p>
+                        <p>Não, desde que você siga o checklist da nossa Engenharia Anti-Block! No treinamento mostramos os parâmetros exatos de espelhamento, enquadramento central 9:16, ajustes de nitidez e filtros que descaracterizam a cena para o robô da Meta, permitindo que seus vídeos circulem livres.</p>
                     </div>
                 </div>
 
@@ -819,7 +933,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Sim! O treinamento ensina o passo a passo completo no CapCut Mobile (celular), além de também ter aulas no CapCut Desktop para quem prefere editar no computador. Você pode trabalhar 100% da palma da sua mão.</p>
+                        <p>Sim! O treinamento ensina o passo a passo completo no CapCut Mobile (celular), além de ter uma aula específica no CapCut Desktop para quem prefere computador. Você pode trabalhar 100% da palma da sua mão.</p>
                     </div>
                 </div>
 
@@ -829,7 +943,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Não! Quem garante a vaga nesta turma de lançamento paga apenas a taxa única de R$ 47 e tem Acesso Vitalício garantido para sempre, incluindo todos os novos módulos e aulas que forem adicionados futuramente.</p>
+                        <p>Não! Quem garante a vaga nesta turma paga a taxa única de R$ 47 e tem Acesso Vitalício garantido, incluindo todas as atualizações futuras.</p>
                     </div>
                 </div>
 
@@ -839,34 +953,24 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Assim que o pagamento for confirmed (no PIX ou Cartão a liberação é imediata), você receberá um e-mail com seus dados de login e senha para acessar a área de membros exclusiva da Perfect Academy.</p>
+                        <p>Assim que o pagamento for aprovado (no PIX ou Cartão a liberação é imediata), você receberá um e-mail com seus dados de login e senha para acessar a área de membros exclusiva da Perfect Academy.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Não entendo nada de edição ou tecnologia. Vou conseguir acompanhá-lo?</span>
+                        <span>Como funciona a afiliação exclusiva de 50%?</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Com certeza! O curso foi desenhado em formato clique a clique com aulas curtas e práticas de 3 a 8 minutos. Qualquer pessoa, mesmo sem conhecimento prévio, consegue seguir o checklist e colocar os primeiros vídeos no ar no mesmo dia.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Como funciona o programa de afiliados de 50%?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Dentro da plataforma você terá o link exclusivo de afiliação VIP ao treinamento Adeus CLT. Você pode divulgar o curso na sua própria página e receber 50% de comissão direta por cada venda realizada.</p>
+                        <p>Dentro da plataforma você terá o link exclusivo de afiliação VIP ao treinamento Adeus CLT. Você pode divulgar o curso nas suas próprias páginas e receber 50% de comissão direta por cada venda realizada.</p>
                     </div>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 65px;" class="reveal">
+            <div style="text-align: center; margin-top: 60px;" class="reveal">
                 <a href="https://go.perfectpay.com.br/PPU38CQFF50?src=meta_faq&utm_source=facebook&utm_medium=reels" class="btn-cta">
-                    <span>GARANTIR MINHA VAGA COM MAIS 50% DE DESCONTO</span>
+                    <span>GARANTIR MINHA VAGA POR R$ 47 AGORA</span>
                     <small>⚡ Pagamento Único de R$ 47 • Acesso Vitalício Imediato</small>
                 </a>
             </div>
@@ -907,20 +1011,40 @@
     </div>
 
     <script>
-        // Scroll Reveal Logic
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 50;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+        // High-Performance Scroll Reveal (Zero Layout Thrashing / Zero INP Lag)
+        document.addEventListener("DOMContentLoaded", function () {
+            const reveals = document.querySelectorAll(".reveal");
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("active");
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.05, rootMargin: "0px 0px -20px 0px" });
+
+                reveals.forEach(el => observer.observe(el));
+            } else {
+                let ticking = false;
+                function checkReveal() {
+                    const windowHeight = window.innerHeight;
+                    reveals.forEach(el => {
+                        if (el.getBoundingClientRect().top < windowHeight - 40) {
+                            el.classList.add("active");
+                        }
+                    });
+                    ticking = false;
                 }
+                window.addEventListener("scroll", () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(checkReveal);
+                        ticking = true;
+                    }
+                }, { passive: true });
+                checkReveal();
             }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // Trigger on load
+        });
 
         // Cronômetro Inteligente com LocalStorage
         function startSmartTimer() {
